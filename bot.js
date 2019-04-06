@@ -17,6 +17,7 @@ const snekfetch = require('snekfetch');
 const queue = new Map();
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
+client.queue = new Map()
 
 
 const app = express();

@@ -8,6 +8,7 @@ const db = require('quick.db')
 const Jimp = require('jimp');
 const snekfetch = require('snekfetch');
 require('./util/eventLoader')(client);
+client.queue = new Map()
 
 let owner = "419840467929137168" //Kendi ıdnizi ekleyin
 

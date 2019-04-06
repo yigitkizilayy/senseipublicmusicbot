@@ -13,7 +13,7 @@ exports.run = (client, message, params) => {
   .addField(`:musical_note: Müzik Komutları :musical_note:`, '!çal: `İstediğin şarkıyı çalar.`\n!duraklat: `Müziği duraklatır.`\n!devamet: `Müziği devam ettirir.`\n!tekrar:` Müziği tekrarlatır.`\n!geç: `Geçerli çalınan müziği geçer`\n!dur: `Müziği kapatır.`')
  .addField(`------------------`, '-')
   .addField(`:robot: Bot Commands :robot:`, '!prefix: `Changes prefix.` \n!davet: `İnvite the bot`')
-  .addField(`:musical_note: Music Commands :musical_note:`, '!play: `playing to music`. \n!pauses: `stop music.` \n!continuation: `continues music.` \n!again: `repeats music` \n!passes: `passes music` \n!stop: `stop the music`')
+  .addField(`:musical_note: Music Commands :musical_note:`, '!play: `playing to music`. \n!pause: `stop music.` \n!continuation: `continues music.` \n!again: `repeats music` \n!passes: `passes music` \n!stop: `stop the music`')
   if (!params[0]) {
     const commandNames = Array.from(client.commands.keys());
     const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
