@@ -9,7 +9,7 @@ const Jimp = require('jimp');
 const snekfetch = require('snekfetch');
 require('./util/eventLoader')(client);
 
-let owner = "309617463857905674" //Kendi ıdnizi ekleyin
+let owner = "419840467929137168" //Kendi ıdnizi ekleyin
 
 
 const http = require('http');
