@@ -10,7 +10,9 @@ exports.run = (client, message, params) => {
   .setColor('RANDOM')
   .setTitle('```Techno Müzik Bot Komutları```')
   .addField(`:robot: Bot Komutları :robot:`, '!prefix: `botun prefixini değiştirebilirsiniz.` \n!davet: `botu davet edebilirsiniz.`')
-  .addField(`:musical_note: Müzik Komutları :musical_note:`, '!çal: `İstediğin şarkıyı çalar.`\n!duraklat: `Müziği duraklatır.`\n!devam: `Müziği devam ettirir.`\n!tekraret:` Müziği tekrarlatır.`\n!geç: `Geçerli çalınan müziği geçer`\n!ses: Belirlediğiniz değerde sesi açar.\n!stop: `Müziği kapatır.`')
+  .addField(`:musical_note: Müzik Komutları :musical_note:`, '!çal: `İstediğin şarkıyı çalar.`\n!duraklat: `Müziği duraklatır.`\n!devam: `Müziği devam ettirir.`\n!tekrar:` Müziği tekrarlatır.`\n!geç: `Geçerli çalınan müziği geçer`\n!stop: `Müziği kapatır.`')
+  .setTitle('```Techno Song Bot Command```')
+  .setField(`:robot: Bot Command :robot:`, '!prefix: Changes prefix \n!davet:')
   if (!params[0]) {
     const commandNames = Array.from(client.commands.keys());
     const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
@@ -29,12 +31,12 @@ exports.run = (client, message, params) => {
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ['müzik'],
+    aliases: ['help', 'y'],
     permLevel: 0
   };
   
   exports.help = {
-    name: 'müzik',
+    name: 'yardım',
     description: 'yardım',
     usage: 'yardım'
   };
