@@ -13,7 +13,7 @@ exports.run = (client, message) => {
     .setColor(0xD97634)
     .setTimestamp()
     .setAuthor(message.author.username, message.author.avatarURL)
-    .setDescription('Link:', `[tıkla] https://discordapp.com/oauth2/authorize?client_id=439532048387145739&scope=bot&permissions=2146958591`);
+    .addField('Davet Linki!', `[Tıkla!](https://discordapp.com/oauth2/authorize?client_id=497121599892226058&scope=bot&permissions=268443838)`, true)
     return message.author.sendEmbed(pingozel)
 };
 
