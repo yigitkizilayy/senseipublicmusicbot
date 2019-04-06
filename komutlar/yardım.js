@@ -8,8 +8,7 @@ exports.run = (client, message, params) => {
   .setTitle("")
   .setDescription('')
   .setColor('RANDOM')
-  .addFeild(``)
-  .addField(`:musical_note: Müzik Komutları :musical_note:`, '!!çal: İstediğin şarkıyı çalar.\n!!durklat: Müziği durdurur.\n!!devam: Müziği devam ettirir.\n!!kuyruk: Kuyruğu söyler\n!!geç: Geçerli çalınan müziği geçer\n!!ses: Belirlediğiniz değerde sesi açar.\n!!stop: Müziği kapatır.')
+  .addField(`:musical_note: Müzik Komutları :musical_note:`, '!çal: İstediğin şarkıyı çalar.\n!duraklat: Müziği duraklatır.\n!!devam: Müziği devam ettirir.\n!tekraret: Müziği tekrarlatır.\n!geç: Geçerli çalınan müziği geçer\n!!ses: Belirlediğiniz değerde sesi açar.\n!!stop: Müziği kapatır.')
   if (!params[0]) {
     const commandNames = Array.from(client.commands.keys());
     const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
