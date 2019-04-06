@@ -11,8 +11,8 @@ exports.run = (client, message, params) => {
   .setTitle('```Techno Müzik Bot Komutları```')
   .addField(`:robot: Bot Komutları :robot:`, '!prefix: `botun prefixini değiştirebilirsiniz.` \n!davet: `botu davet edebilirsiniz.`')
   .addField(`:musical_note: Müzik Komutları :musical_note:`, '!çal: `İstediğin şarkıyı çalar.`\n!duraklat: `Müziği duraklatır.`\n!devam: `Müziği devam ettirir.`\n!tekrar:` Müziği tekrarlatır.`\n!geç: `Geçerli çalınan müziği geçer`\n!stop: `Müziği kapatır.`')
-  .setTitle('```Techno Song Bot Command```')
-  .setField(`:robot: Bot Command :robot:`, '!prefix: Changes prefix \n!davet:')
+ .addField(`------------------`, '-')
+  .addField(`:robot: Bot Command :robot:`, '!prefix: Changes prefix. \n!davet:')
   if (!params[0]) {
     const commandNames = Array.from(client.commands.keys());
     const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
