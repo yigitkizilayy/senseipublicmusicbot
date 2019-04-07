@@ -9,7 +9,7 @@ exports.run = (client, message, params) => {
   .setDescription('')
   .setColor('RANDOM')
   .setTitle('```Techno Müzik Bot Komutları```')
-  .addField(`:robot: Bot Komutları :robot:`, '!prefix: `botun prefixini değiştirebilirsiniz.` \n!davet: `botu davet edebilirsiniz.` \n!ping: `botun ping değerlerini görebilirsiniz.` \n!sil: `bulunduğunuz yerdeki mesajları siler`')
+  .addField(`:robot: Bot Komutları :robot:`, '!prefix: `botun prefixini değiştirebilirsiniz.` \n!davet: `botu davet edebilirsiniz.` \n!ping: `botun ping değerlerini görebilirsiniz.` \n!sil: `bulunduğunuz yerdeki mesajları silebilirsiniz.`')
   .addField(`:musical_note: Müzik Komutları :musical_note:`, '!çal: `İstediğin şarkıyı çalar.`\n!duraklat: `Müziği duraklatır.`\n!devamet: `Müziği devam ettirir.`\n!tekrar:` Müziği tekrarlatır.`\n!geç: `Geçerli çalınan müziği geçer`\n!dur: `Müziği kapatır.`')
  .addField(`------------------`, '-')
   .addField(`:robot: Bot Commands :robot:`, '!prefix: `Changes prefix.` \n!davet: `İnvite the bot.` \n!ping: `ping.` \n!clear: `clear the messages.`')
