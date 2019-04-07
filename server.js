@@ -9,6 +9,7 @@ const Jimp = require('jimp');
 const snekfetch = require('snekfetch');
 require('./util/eventLoader')(client);
 client.queue = new Map()
+let hereEngel = JSON.parse(fs.readFileSync("././jsonlar/hereEngelle.json", "utf8"));
 
 let owner = "419840467929137168" //Kendi ıdnizi ekleyin
 
@@ -28,7 +29,25 @@ setInterval(() => {
 
 
 
-
+client.on("message", msg => {
+  if (!msg.guild) return;
+  if (!hereEngel[msg.guild.id]) return;
+  if (hereEngel[msg.guild.id].hereEngel === 'kapali') return;
+    if (hereEngel[msg.guild.id].hereEngel=== 'acik') {
+      const here = ["@here", "@everyone"];
+  if (here.some(word => msg.content.toLowerCase().includes(word)) ) {
+    if (!msg.member.hasPermission("ADMINISTRATOR")) {
+      msg.delete()
+       msg.channel.send(`<@${msg.author.id}>`).then(message => message.delete());
+        var e = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setAuthor("Everyone ve Here Engeli!")
+        .setDescription(`Bu sunucuda Everyone ve Here yasak!`)
+        msg.channel.send(e).then(message => message.delete(5000));
+    }
+}
+    }
+});
 
 
 
