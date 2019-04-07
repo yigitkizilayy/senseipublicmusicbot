@@ -10,7 +10,7 @@ dependencies:
   express: 4.16.4
   figlet: 1.2.1
   fs: 0.0.2
-  hastebin-gen: 1.3.1
+  hastebin-gen: 2.0.3
   inquirer: 6.2.2
   jimp: 0.6.1
   math-expression-evaluator: 1.2.17
@@ -1590,12 +1590,12 @@ packages:
       node: '>= 0.4.0'
     resolution:
       integrity: sha512-f2dvO0VU6Oej7RkWJGrehjbzMAjFp5/VKPp5tTpWIV4JHHZK1/BxbFRtf/siA2SWTe09caDmVtYYzWEIbBS4zw==
-  /hastebin-gen/1.3.1:
+  /hastebin-gen/2.0.3:
     dependencies:
-      snekfetch: 3.6.4
+      node-fetch: 2.3.0
     dev: false
     resolution:
-      integrity: sha512-s1nz7fPrz9Lqp/RQhbhlFTLKsr6klvNW30TKBi0WOrUluHTNkOZ3wlpWbNXRgE7b3+oTS0KJ23D+FXxw48JPOA==
+      integrity: sha512-A5mg2klU3A/Xtmv6u7TwXhPIjKwwKME/XJ/U73EstNIiR+6KrZCrequSKym5tl8ON1f7EFpxxha/kaRHb0TcMw==
   /html-entities/1.2.1:
     dev: false
     engines:
@@ -3822,13 +3822,13 @@ specifiers:
   express: ^4.16.4
   figlet: ^1.2.1
   fs: ^0.0.2
-  hastebin-gen: ^1.3.1
+  hastebin-gen: ^2.0.0
   inquirer: ^6.2.2
   jimp: ^0.6.1
   math-expression-evaluator: ^1.2.17
   moment: ^2.24.0
   moment-duration-format: ^2.2.2
-  mongodb: ^3.1.11
+  mongodb: ^3.2.3
   mongoose: ^5.4.20
   ms: ^2.1.1
   mysql: ^2.16.0
