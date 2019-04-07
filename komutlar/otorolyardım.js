@@ -8,7 +8,7 @@ exports.run = (client, message, params) => {
   .setTitle("Oto Rol Yardım")
   .setDescription('')
   .setColor('RED')
-  .addField(`:robot: Komutlar :robot:`, '!kapatotorol: `otorol komutunu kapatır.` \n!otorol: `otorol @rolismi #kanalismi şeklinde otorol ayarlayabilirsiniz.`\n!kapatotoyazı: `Otorol mesajlarını kapator.`')
+  .addField(`:robot: Komutlar :robot:`, '!kapatotorol: `otorol komutunu kapatır.` \n!otorol: `otorol @rolismi #kanalismi şeklinde otorol ayarlayabilirsiniz.`\n!kapatotoyazı: `Otorol mesajlarını kapatır.`')
   if (!params[0]) {
     const commandNames = Array.from(client.commands.keys());
     const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);

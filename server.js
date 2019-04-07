@@ -84,6 +84,21 @@ client.on("guildMemberAdd", async (member) => {
 
 
 
+client.on("message", message => {
+
+if (message.content.startsWith('!js')) 
+{
+message.delete()
+            message.member.addRole(message.member.guild.roles.find('name', '</>Java Skript'));
+message.channel.send(`<@${message.author.id}> **js** rolün başarıyla verildi.`)
+      }
+      });;
+
+
+
+
+
+
 /*client.on("guildMemberAdd", async member => {
          let anan = member.user.avatarURL || member.user.defaultAvatarURL
     let memberChannel = await db.fetch(`memberChannel_${member.guild.id}`)
