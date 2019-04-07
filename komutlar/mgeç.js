@@ -26,7 +26,7 @@ exports.run = async (client, message, args) => {
     .setDescription(`Şarkı başarıyla geçildi!`)
     serverQueue.connection.dispatcher.end('');
     message.channel.send(songSkip)
-
+if(!message.member.hasPermission("KİCK_MEMBERS")) return message.reply("Bu Komutu Kullanmak İçin İzniniz Yok!");
 };
 
 exports.conf = {
