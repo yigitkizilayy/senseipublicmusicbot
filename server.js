@@ -266,10 +266,10 @@ client.on("message", message => {
 });
 
 
-/*ient.on("ready", () => {
-  client.user.setActivity(prefix + "yardım ") 
-  console.log("Bağlandım!")   
-});
+//client.on("ready", () => {
+ // client.user.setActivity() 
+ // console.log("Bağlandım!")   
+//});
 
 client.commands = new Discord.Collection();
 client.aliases = new Discord.Collection();
