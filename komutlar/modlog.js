@@ -39,7 +39,7 @@ if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`Bu kom
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: [],
+    aliases: ['modlog'],
     permLevel: 0
 }
 
