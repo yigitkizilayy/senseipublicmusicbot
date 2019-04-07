@@ -11,6 +11,7 @@ exports.run = (client, message, params) => {
   .setTitle('```Techno Müzik Bot Komutları```')
   .addField(`:robot: Bot Komutları :robot:`, '!prefix: `botun prefixini değiştirebilirsiniz.` \n!davet: `botu davet edebilirsiniz.` \n!ping: `botun ping değerlerini görebilirsiniz.` \n!sil: `bulunduğunuz yerdeki mesajları silebilirsiniz.`')
   .addField(`:musical_note: Müzik Komutları :musical_note:`, '!çal: `İstediğin şarkıyı çalar.`\n!duraklat: `Müziği duraklatır.`\n!devamet: `Müziği devam ettirir.`\n!tekrar:` Müziği tekrarlatır.`\n!geç: `Geçerli çalınan müziği geçer`\n!dur: `Müziği kapatır.`')
+  .addField(`Sunucu Komutları`, '!h-e: `Sunucunda everyone ve here engeller`')
  .addField(`------------------`, '-')
   .addField(`:robot: Bot Commands :robot:`, '!prefix: `Changes prefix.` \n!davet: `İnvite the bot.` \n!ping: `ping.` \n!clear: `clear the messages.`')
   .addField(`:musical_note: Music Commands :musical_note:`, '!play: `playing to music`. \n!pause: `stop music.` \n!continuation: `continues music.` \n!again: `repeats music` \n!passes: `passes music` \n!stop: `stop the music`')

@@ -52,6 +52,57 @@ client.on("message", msg => {
 
 
 
+client.on("guildMemberAdd", async member => {
+         let anan = member.user.avatarURL || member.user.defaultAvatarURL
+    let memberChannel = await db.fetch(`memberChannel_${member.guild.id}`)
+    if (!member.guild.channels.get(memberChannel)) return console.log('memberChannel')
+        let username = member.user.username;
+        if (member.guild.channels.get(memberChannel) === undefined || member.guild.channels.get(memberChannel) === null) return;
+        if (member.guild.channels.get(memberChannel).type === "text") {
+            const bg = await Jimp.read("https://cdn.discordapp.com/attachments/450693709076365323/473184528148725780/guildAdd.png");
+            const userimg = await Jimp.read(anan);
+            var font;
+            if (member.user.tag.length < 15) font = await Jimp.loadFont(Jimp.FONT_SANS_128_WHITE);
+            else if (member.user.tag.length > 15) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
+            else font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
+            await bg.print(font, 430, 170, member.user.tag);
+            await userimg.resize(362, 362);
+            await bg.composite(userimg, 43, 26).write("./img/"+ member.id + ".png");
+              setTimeout(function () {
+                    member.guild.channels.get(memberChannel).send(new Discord.Attachment("./img/" + member.id + ".png"));
+              }, 1000);
+              setTimeout(function () {
+                fs.unlink("./img/" + member.id + ".png");
+              }, 10000);
+        }
+    })
+client.on("guildMemberRemove", async member => {
+         let anan = member.user.avatarURL || member.user.defaultAvatarURL
+    let memberChannel = await db.fetch(`memberChannel_${member.guild.id}`)
+    if (!member.guild.channels.get(memberChannel)) return console.log('memberChannel')
+        let username = member.user.username;
+        if (member.guild.channels.get(memberChannel) === undefined || member.guild.channels.get(memberChannel) === null) return;
+        if (member.guild.channels.get(memberChannel).type === "text") {
+            const bg = await Jimp.read("https://cdn.discordapp.com/attachments/450693709076365323/473184546477572107/guildRemove.png");
+            const userimg = await Jimp.read(anan);
+            var font;
+            if (member.user.tag.length < 15) font = await Jimp.loadFont(Jimp.FONT_SANS_128_WHITE);
+            else if (member.user.tag.length > 15) font = await Jimp.loadFont(Jimp.FONT_SANS_64_WHITE);
+            else font = await Jimp.loadFont(Jimp.FONT_SANS_32_WHITE);
+            await bg.print(font, 430, 170, member.user.tag);
+            await userimg.resize(362, 362);
+            await bg.composite(userimg, 43, 26).write("./img/"+ member.id + ".png");
+              setTimeout(function () {
+                    member.guild.channels.get(memberChannel).send(new Discord.Attachment("./img/"+ member.id + ".png"));
+              }, 1000);
+              setTimeout(function () {
+                fs.unlink("./img/" + member.id + ".png");
+              }, 10000);
+        }
+    })
+
+
+
 
 
 const log = message => {
