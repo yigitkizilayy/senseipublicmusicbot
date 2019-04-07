@@ -135,6 +135,19 @@ client.on('error', e => {
 
 
 client.on("guildMemberAdd", async member => {
+    let sayac = JSON.parse(fs.readFileSync("./ayarlar/sayac.json", "utf8"));
+    const channel = member.guild.channels.find("name", "sayaç")
+    channel.send(`**${member.user.tag}** Katıldı 😎 **${sayac[member.guild.id].sayi}** olmamıza son **${sayac[member.guild.id].sayi - member.guild.members.size}** üye kaldı!`)
+})
+
+client.on("guildMemberRemove", async member => {
+    let sayac = JSON.parse(fs.readFileSync("./ayarlar/sayac.json", "utf8"));
+    const channel = member.guild.channels.find("name", "sayaç")
+    channel.send(`**${member.user.tag}** Ayrıldı 🙁 **${sayac[member.guild.id].sayi}** olmamıza son **${sayac[member.guild.id].sayi - member.guild.members.size}** üye kaldı!`)
+})
+
+
+client.on("guildMemberAdd", async member => {
         let sayac = JSON.parse(fs.readFileSync("./otorol.json", "utf8"));
   let otorole =  JSON.parse(fs.readFileSync("./otorol.json", "utf8"));
       let arole = otorole[member.guild.id].sayi
