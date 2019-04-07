@@ -150,7 +150,29 @@ client.on("guildMemberRemove", async member => {
 */
 
 
+
+
+client.on("message", async msg => {
   
+  
+  const i = await db.fetch(`ssaass_${msg.guild.id}`);
+    if (i == 'acik') {
+      if (msg.content.toLowerCase() == 'sa' || msg.content.toLowerCase() == 's.a' || msg.content.toLowerCase() == 'selamun aleyküm') {
+          try {
+
+                  return msg.reply('Aleyküm Selam, Hoşgeldin')
+          } catch(err) {
+            console.log(err);
+          }
+      }
+    }
+    else if (i == 'kapali') {
+      
+    }
+    if (!i) return;
+  
+    });
+ /* 
 1
 2
 3
@@ -205,7 +227,8 @@ client.on("guildMemberRemove", async member => {
 52
 53
 54
-client.on("guildMemberAdd", async member => {
+
+*/client.on("guildMemberAdd", async member => {
 const fs = require('fs');
 let gc = JSON.parse(fs.readFileSync("./jsonlar/gc.json", "utf8"));
   
@@ -484,4 +507,4 @@ client.on("guildMemberAdd", async member => {
 
 
 client.login(process.env.TOKEN);
-//XiR
+/Ď
