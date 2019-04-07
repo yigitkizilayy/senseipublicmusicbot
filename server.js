@@ -266,7 +266,7 @@ client.on("message", message => {
 });
 
 
-client.on("ready", () => {
+/*ient.on("ready", () => {
   client.user.setActivity(prefix + "yardım ") 
   console.log("Bağlandım!")   
 });
@@ -337,7 +337,7 @@ client.unload = command => {
   });
 };
 
-
+/*/
 
 
 /*const invites = {};
