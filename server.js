@@ -317,7 +317,7 @@ let gc = JSON.parse(fs.readFileSync("./sunucuyaözelayarlar/log.json", "utf8"));
 			.setAuthor(msg.author.tag, msg.author.avatarURL)
 			.setColor('RANDOM')
 			.setDescription(`<@!${msg.author.id}> tarafından <#${msg.channel.id}> kanalına gönderilen "${msg.content}" mesajı silindi.`)
-		.setFooter(`Techmo Bot Mod-Log Sistemi | ID: ${msg.id}`)
+		.setFooter(`Techno Bot Mod-Log Sistemi | ID: ${msg.id}`)
 			hgK.send({embed});
 		
 	})
@@ -334,7 +334,7 @@ let gc = JSON.parse(fs.readFileSync("./sunucuyaözelayarlar/log.json", "utf8"));
 				.setColor('RANDOM')
 				.setAuthor(channel.guild.name, channel.guild.iconURL)
 				.setDescription(`<#${channel.id}> kanalı oluşturuldu. _(metin kanalı)_`)
-				.setFooter(`Botismi Mod-Log Sistemi | ID: ${channel.id}`)
+				.setFooter(`Techno Bot Mod-Log Sistemi | ID: ${channel.id}`)
 				hgK.send({embed});
 			};
 			if (channel.type === "voice") {
