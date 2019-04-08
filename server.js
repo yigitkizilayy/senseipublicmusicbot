@@ -728,6 +728,56 @@ client.on("message", message => {
 });
 
 
+
+client.on("message", message => {
+    const dmchannel = client.channels.find("name", "dm-log");
+    if (message.channel.type === "dm") {
+        if (message.author.bot) return;
+        dmchannel.sendMessage("", {embed: {
+            color: 3447003,
+            title: `Gönderen: ${message.author.tag}`,
+            description: `Bota Özelden Gönderilen DM: ${message.content}`
+        }})
+    }
+});
+
+client.on('guildDelete', guild => {
+
+let rrrsembed = new Discord.RichEmbed()
+
+.setColor("RED")
+.setTitle(" Bot Kickledi ")
+.addField("Sunucu Adı:", guild.name)
+.addField("Sunucu sahibi", guild.owner)
+.addField("Sunucu Sahibi'nin ID'si", guild.ownerID)
+.addField("Sunucunun Kurulu Olduğu Bölge:", guild.region)
+.addField("Sunucudaki Kişi Sayısı:", guild.memberCount)
+
+   client.channels.get('564916364591235093').send(rrrsembed);
+  
+});
+
+
+client.on('guildCreate', guild => {
+
+let rrrsembed = new Discord.RichEmbed()
+
+.setColor("GREEN")
+.setTitle(" Bot Eklendi ")
+.addField("Sunucu Adı:", guild.name)
+.addField("Sunucu sahibi", guild.owner)
+.addField("Sunucu Sahibi'nin ID'si", guild.ownerID)
+.addField("Sunucunun Kurulu Olduğu Bölge:", guild.region)
+.addField("Sunucudaki Kişi Sayısı:", guild.memberCount)
+
+   client.channels.get('564916364591235093').send(rrrsembed);
+  
+});
+
+
+
+
+
 //client.on("ready", () => {
  // client.user.setActivity() 
  // console.log("Bağlandım!")   

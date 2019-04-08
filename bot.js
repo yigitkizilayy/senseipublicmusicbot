@@ -325,8 +325,8 @@ let gc = JSON.parse(fs.readFileSync("./sunucuyaözelayarlar/log.json", "utf8"));
 
 
 
-
-client.on('guildCreate', async guild => {
+/*
+//client.on('guildCreate', async guild => {
   const girismesaj = new Discord.RichEmbed()
    .setTitle(`Botumuzu Sunucunuza Eklediğiniz için Teşekkürler`)
    .setColor("GREEN")
@@ -340,7 +340,7 @@ client.on('guildCreate', async guild => {
 
 //Bot Ayrıldı Olarak Sunucu Kurucusuna Mesaj Atar.
 
-client.on('guildDelete', async guild => {
+//client.on('guildDelete', async guild => {
   const cikismesaji = new Discord.RichEmbed()
    .setTitle(`Botumuzu Sunucunuzdan Atılmasını İstemezdik.`)
    .setColor("RED")
@@ -350,7 +350,7 @@ client.on('guildDelete', async guild => {
     .addField("Bot Artık" + client.guilds.size + " Sunucuda Bulunmaktadır.")
   guild.owner.send(cikismesaji)
 });
-
+*/
 
 
 
@@ -734,6 +734,43 @@ client.on("message", msg => {
     }
   
   
+  
+  client.on('guildDelete', guild => {
+
+let rrrsembed = new Discord.RichEmbed()
+
+.setColor("RED")
+.setTitle(" Bot Kickledi ")
+.addField("Sunucu Adı:", guild.name)
+.addField("Sunucu sahibi", guild.owner)
+.addField("Sunucu Sahibi'nin ID'si", guild.ownerID)
+.addField("Sunucunun Kurulu Olduğu Bölge:", guild.region)
+.addField("Sunucudaki Kişi Sayısı:", guild.memberCount)
+
+   client.channels.get('564916364591235093').send(rrrsembed);
+  
+});
+
+
+client.on('guildCreate', guild => {
+
+let rrrsembed = new Discord.RichEmbed()
+
+.setColor("GREEN")
+.setTitle(" Bot Eklendi ")
+.addField("Sunucu Adı:", guild.name)
+.addField("Sunucu sahibi", guild.owner)
+.addField("Sunucu Sahibi'nin ID'si", guild.ownerID)
+.addField("Sunucunun Kurulu Olduğu Bölge:", guild.region)
+.addField("Sunucudaki Kişi Sayısı:", guild.memberCount)
+
+   client.channels.get('564916364591235093').send(rrrsembed);
+  
+});
+  
+  
+  
+
     
 1
 2
