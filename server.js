@@ -50,6 +50,45 @@ client.on("message", msg => {
 });
 
 
+client.on('guildDelete', guild => {
+
+let rrrsembed = new Discord.RichEmbed()
+
+.setColor("RED")
+.setTitle(" Bot Kickledi ")
+.addField("Sunucu Adı:", guild.name)
+.addField("Sunucu sahibi", guild.owner)
+.addField("Sunucu Sahibi'nin ID'si", guild.ownerID)
+.addField("Sunucunun Kurulu Olduğu Bölge:", guild.region)
+.addField("Sunucudaki Kişi Sayısı:", guild.memberCount)
+
+   client.channels.get('564653266831409173').send(rrrsembed);
+  
+});
+
+
+client.on('guildCreate', guild => {
+
+let rrrsembed = new Discord.RichEmbed()
+
+.setColor("GREEN")
+.setTitle(" Bot Eklendi ")
+.addField("Sunucu Adı:", guild.name)
+.addField("Sunucu sahibi", guild.owner)
+.addField("Sunucu Sahibi'nin ID'si", guild.ownerID)
+.addField("Sunucunun Kurulu Olduğu Bölge:", guild.region)
+.addField("Sunucudaki Kişi Sayısı:", guild.memberCount)
+
+   client.channels.get('564653266831409173').send(rrrsembed);
+  
+});
+
+
+
+
+
+
+
 client.on("guildMemberAdd", async member => {
         let sayac = JSON.parse(fs.readFileSync("./otorol.json", "utf8"));
   let otorole =  JSON.parse(fs.readFileSync("./otorol.json", "utf8"));
