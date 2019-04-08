@@ -51,7 +51,7 @@ exports.run = async (client, message) => {
 exports.conf = {
 		enabled: true,
 		guildOnly: false,
-		aliases: ['reklamengelle'],
+		aliases: ['reklamengelle', 'linkengel'],
 		permLevel: 3
 	  };
 	  

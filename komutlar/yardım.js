@@ -12,7 +12,7 @@ exports.run = (client, message, params) => {
   .addField(`Bot Komutları`, '!prefix: `botun prefixini değiştirebilirsiniz.` \n!davet: `botu davet edebilirsiniz.` \n!ping: `botun ping değerlerini görebilirsiniz.` \n!sil: `bulunduğunuz yerdeki mesajları silebilirsiniz.`')
   .addField(`Müzik Komutları`, '!çal: `İstediğin şarkıyı çalar.`\n!duraklat: `Müziği duraklatır.`\n!devamet: `Müziği devam ettirir.`\n!tekrar:` Müziği tekrarlatır.`\n!geç: `Geçerli çalınan müziği geçer`\n!dur: `Müziği kapatır.`')
   .addField(`Sunucu Komutları`, '!h-e: `Sunucunda everyone ve here engeller` \n!otorol: `sunucunuza gelen kislere otomatik rol verir detaylı bilgi için !oyardım.` \n!girisçikis:` Resimli gelen-giden ayarlar.`\n!sayaç: `sunucunuza sayaç ekleyebilirsiniz` \n!sa-as:`ayarlamalı sa-as komutu.`')
-  .addField(`Moderasyon Komutları`, '!ban: `Sunucuda istedğiniz kişiyi banlar.` \n!kick: `Sunucunuzdaki kişileri kicklersiniz` \n!modlog: sunucunuzda olan bitenden haberdar olursunuz.`')
+  .addField(`Moderasyon Komutları`, '!ban: `Sunucuda istedğiniz kişiyi banlar.` \n!kick: `Sunucunuzdaki kişileri kicklersiniz` \n!modlog:` sunucunuzda olan bitenden haberdar olursunuz.`\n!linkengel: `sunucunuzda yapılan reklamları engeller`')
   .addField(`Kullanıcı Komutları`, '!döviz: `Güncel kur fiyatlarını görürsünüz`\n!havadurumu: `Seçtiğiniz ilin hava durumunu gösterir.`\n!steam: `seçtiğiniz oyun hakkında bilgiler verir.`')
   .setDescription('Bottaki Komutlar Yenilenmektedir. Detaylı Bilgi İçin !davet Destek sunucusuna gelin!.')
  //.addField(`------------------`, '-')
