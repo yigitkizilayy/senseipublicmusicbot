@@ -14,7 +14,7 @@ exports.run = (client, message) => {
     .setTimestamp()
     .setAuthor(message.author.username, message.author.avatarURL)
     .addField('Davet Linki!', `[Tıkla!](https://discordapp.com/oauth2/authorize?client_id=545284192192167938&scope=bot&permissions=805829694)`, true)
-  .addField('Destek Sunucusu', `[Tıkla!]()`, true)
+  .addField('Destek Sunucusu', `[Tıkla!](https://discord.gg/vC6rWxs)`, true)
     return message.author.sendEmbed(pingozel)
 };
 
