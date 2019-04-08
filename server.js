@@ -280,7 +280,7 @@ let gc = JSON.parse(fs.readFileSync("./sunucuyaözelayarlar/log.json", "utf8"));
 			.setColor('RANDOM')
 			.setDescription(`<@!${member.user.id}>, ${member.user.tag}`)
 			.setThumbnail(member.user.avatarURL)
-			.setFooter(`Botismi Mod-Log Sistemi | ID: ${member.user.id}`)
+			.setFooter(`Techno Bot Mod-Log Sistemi | ID: ${member.user.id}`)
 			.setTimestamp();
 			hgK.send({embed});
 
@@ -299,7 +299,7 @@ let gc = JSON.parse(fs.readFileSync("./sunucuyaözelayarlar/log.json", "utf8"));
 			.setColor('RANDOM')
 			.setDescription(`<@!${member.user.id}>, ${member.user.tag}`)
 			.setThumbnail(member.user.avatarURL)
-			.setFooter(`Botismi Mod-Log Sistemi | ID: ${member.user.id}`)
+			.setFooter(`Techno Bot Mod-Log Sistemi | ID: ${member.user.id}`)
 			.setTimestamp();
 			hgK.send({embed});
 		
@@ -317,7 +317,7 @@ let gc = JSON.parse(fs.readFileSync("./sunucuyaözelayarlar/log.json", "utf8"));
 			.setAuthor(msg.author.tag, msg.author.avatarURL)
 			.setColor('RANDOM')
 			.setDescription(`<@!${msg.author.id}> tarafından <#${msg.channel.id}> kanalına gönderilen "${msg.content}" mesajı silindi.`)
-		.setFooter(`Botismi Mod-Log Sistemi | ID: ${msg.id}`)
+		.setFooter(`Techmo Bot Mod-Log Sistemi | ID: ${msg.id}`)
 			hgK.send({embed});
 		
 	})
@@ -342,7 +342,7 @@ let gc = JSON.parse(fs.readFileSync("./sunucuyaözelayarlar/log.json", "utf8"));
 					.setColor('RANDOM')
 				.setAuthor(channel.guild.name, channel.guild.iconURL)
 				.setDescription(`${channel.name} kanalı oluşturuldu. _(sesli kanal)_`)
-			.setFooter(`Botismi Mod-Log Sistemi | ID: ${channel.id}`)
+			.setFooter(`Techno Bot Mod-Log Sistemi | ID: ${channel.id}`)
 				hgK.send({embed});
 			}
 		
@@ -367,7 +367,7 @@ let gc = JSON.parse(fs.readFileSync("./sunucuyaözelayarlar/log.json", "utf8"));
 				.setColor('RANDOM')
 				.setAuthor(channel.guild.name, channel.guild.iconURL)
 				.setDescription(`${channel.name} kanalı silindi. _(sesli kanal)_`)
-			.setFooter(`Botismi Mod-Log Sistemi | ID: ${channel.id}`)
+			.setFooter(`Techno Bot Mod-Log Sistemi | ID: ${channel.id}`)
 				hgK.send({embed});
 			}
 		
@@ -384,7 +384,7 @@ let gc = JSON.parse(fs.readFileSync("./sunucuyaözelayarlar/log.json", "utf8"));
         .setAuthor(`Rol Silindi!`)
         .setThumbnail(role.guild.iconURL)
         .setDescription(`'${role.name}' adlı rol silindi.`, true)
-  .setFooter(`Botismi Mod-Log Sistemi | ID: ${role.id}`)
+  .setFooter(`Techno Bot Mod-Log Sistemi | ID: ${role.id}`)
     hgK.send({embed})
 })
 
@@ -399,7 +399,7 @@ let gc = JSON.parse(fs.readFileSync("./sunucuyaözelayarlar/log.json", "utf8"));
         .setAuthor(`Emoji Oluşturuldu!`)
         .setThumbnail(emoji.guild.iconURL)
         .setDescription(`<:${emoji.name}:${emoji.id}> - ${emoji.name} adlı emoji oluşturuldu!`, true)
-  .setFooter(`Botismi Mod-Log Sistemi | ID: ${emoji.id}`)
+  .setFooter(`Techno Bot Mod-Log Sistemi | ID: ${emoji.id}`)
     hgK.send({embedds9})
 })
 
@@ -414,7 +414,7 @@ let gc = JSON.parse(fs.readFileSync("./sunucuyaözelayarlar/log.json", "utf8"));
         .setAuthor(`Emoji Silindi!`)
         .setThumbnail(emoji.guild.iconURL)
         .setDescription(`':${emoji.name}:' adlı emoji silindi!`, true)
-  	.setFooter(`Botismi Mod-Log Sistemi | ID: ${emoji.id}`)
+  	.setFooter(`Techno Bot Mod-Log Sistemi | ID: ${emoji.id}`)
    hgK.send(embedds0)
 })
 
@@ -429,7 +429,7 @@ let gc = JSON.parse(fs.readFileSync("./sunucuyaözelayarlar/log.json", "utf8"));
         .setAuthor(`Rol Oluşturuldu!`)
         .setThumbnail(role.guild.iconURL)
         .setDescription(`'${role.name}' adlı rol oluşturuldu.`, true)
-  .setFooter(`Botismi Mod-Log Sistemi | ID: ${role.id}`)
+  .setFooter(`Techno Bot Mod-Log Sistemi | ID: ${role.id}`)
    hgK.send(embedds0)
 })
 
@@ -459,7 +459,7 @@ let gc = JSON.parse(fs.readFileSync("./sunucuyaözelayarlar/log.json", "utf8"));
         .addField("Önceki Mesaj", oldMessage.content, true)
         .addField("Şimdiki Mesaj", newMessage.content, true)
         .addField("Kanal", newMessage.channel.name, true)
-  	.setFooter(`Botismi Mod-Log Sistemi | ID: ${oldMessage.id}`)
+  	.setFooter(`Techno Bot Mod-Log Sistemi | ID: ${oldMessage.id}`)
     hgK.send(embedds4)
 })
 
@@ -528,10 +528,10 @@ var prefix = ayarlar.prefix;
 
 
 client.on("message", message => {
-  const dmchannel = client.channels.find("name", "dm");
-  if (message.channel.type === "dm") {
+  const dmchannel = client.channels.find("name", "🚨dm-log🚨");
+  if (message.channel.type === "🚨dm-log🚨") {
       if (message.author.id === client.user.id) return;
-      dmchannel.sendMessage("", {embed: {
+      dmchannel.sendMessage("564655078620004372", {embed: {
               color: 3447003,
               title: `DM Atan Kişi: **${message.author.tag}**`,
               description: `Dm Mesajı: **${message.content}**`
@@ -747,7 +747,7 @@ let gc = JSON.parse(fs.readFileSync("./sunucuyaözelayarlar/log.json", "utf8"));
 			.setColor('RANDOM')
 			.setDescription(`<@!${member.user.id}>, ${member.user.tag}`)
 			.setThumbnail(member.user.avatarURL)
-			.setFooter(`Botismi Mod-Log Sistemi | ID: ${member.user.id}`)
+			.setFooter(`Techno Bot Mod-Log Sistemi | ID: ${member.user.id}`)
 			.setTimestamp();
 			hgK.send({embed});
 
@@ -766,7 +766,7 @@ let gc = JSON.parse(fs.readFileSync("./sunucuyaözelayarlar/log.json", "utf8"));
 			.setColor('RANDOM')
 			.setDescription(`<@!${member.user.id}>, ${member.user.tag}`)
 			.setThumbnail(member.user.avatarURL)
-			.setFooter(`Botismi Mod-Log Sistemi | ID: ${member.user.id}`)
+			.setFooter(`Techno boy Mod-Log Sistemi | ID: ${member.user.id}`)
 			.setTimestamp();
 			hgK.send({embed});
 		
@@ -784,7 +784,7 @@ let gc = JSON.parse(fs.readFileSync("./sunucuyaözelayarlar/log.json", "utf8"));
 			.setAuthor(msg.author.tag, msg.author.avatarURL)
 			.setColor('RANDOM')
 			.setDescription(`<@!${msg.author.id}> tarafından <#${msg.channel.id}> kanalına gönderilen "${msg.content}" mesajı silindi.`)
-		.setFooter(`Botismi Mod-Log Sistemi | ID: ${msg.id}`)
+		.setFooter(`Techno bot Mod-Log Sistemi | ID: ${msg.id}`)
 			hgK.send({embed});
 		
 	})
