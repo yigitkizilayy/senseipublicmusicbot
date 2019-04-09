@@ -186,7 +186,33 @@ if (message.content.toLowerCase().startsWith(prefix + `kapat`)) {
 });
 
 
+//Küfür Engelleme Komutu
 
+//https://won.pe/wLBQ2q
+
+//bot.js eklenecek
+let küfürEngel = JSON.parse(fs.readFileSync("././jsonlar/küfürEngelle.json", "utf8"));
+
+client.on("message", msg => {
+  if (!msg.guild) return;
+  if (!küfürEngel[msg.guild.id]) return;
+  if (küfürEngel[msg.guild.id].küfürEngel === 'kapali') return;
+    if (küfürEngel[msg.guild.id].küfürEngel=== 'acik') {
+      const küfür = ["mk", "amk", "aq", "orospu", "oruspu", "oç", "sikerim", "yarrak", "piç", "amq", "sik", "amcık", "çocu", "sex", "seks", "amına", "orospu çocuğu", "sg", "siktir git"];
+  if (küfür.some(word => msg.content.toLowerCase().includes(word)) ) {
+    if (!msg.member.hasPermission("ADMINISTRATOR")) {
+      msg.delete()
+       msg.reply("Bu sunucuda küfürler **XiR** tarafından engellenmektedir! Küfür engeli Açık!").then(message => message.delete(3000));
+    }
+}
+    }
+});
+//XiR
+
+
+//Gerekli Modül: fs
+
+//jsonlar/küfürEngelle.json dosyası oluşturun içerisine {} yazıp kaydedin. 
 
 
 
