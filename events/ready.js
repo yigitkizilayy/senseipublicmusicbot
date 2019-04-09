@@ -11,14 +11,12 @@ module.exports = client => {
   client.user.setStatus("online");
    var oyun = [
        // "Destek sunucumuz saldırıya uğradı sunucumuza gelmek için g!desteksunucum yazabilirsiniz",
-       // "Destek sunucumuz saldırıya uğradı sunucumuza gelmek için g!desteksunucum yazabilirsiniz",
-        "💪 7/24 Aktif!",  
+       // "Destek sunucumuz saldırıya uğradı sunucumuza gelmek için g!desteksunucum yazabilirsiniz", 
         "💡 !davet | İle Botumuzu ekleyin",
-        "👨 2 bin kullanıcı",
-        "🌍 81 Sunucuda Hizmet!",
-        "!yardım 🔥 + !davet "
-     Gelişmiş ready.js
-client.user.setGame(`${prefix}yardım | ${client.guilds.size} sunucu`);
+        "!yardım 🔥 + !davet ",
+         "!yenilikler | Botta yapılan yenilikler."
+    
+////client.user.setGame(`${prefix}yardım | ${client.guilds.size} sunucu`);'
      
     ];
 
@@ -27,5 +25,7 @@ client.user.setGame(`${prefix}yardım | ${client.guilds.size} sunucu`);
         var random = Math.floor(Math.random()*(oyun.length-0+1)+0);
 
         client.user.setGame(oyun[random], "https://www.twitch.tv/erenbaltaci_");
+      
+//client.user.setGame(`${prefix}yardım | ${client.guilds.size} sunucu`);
         }, 2 * 2500);
 }
