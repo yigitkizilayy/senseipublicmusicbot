@@ -30,6 +30,93 @@ setInterval(() => {
 
 
 
+
+
+client.on('guildBanAdd', async (guild, member) => {
+    const fs = require('fs');
+let gc = JSON.parse(fs.readFileSync("./log.json", "utf8"));
+  
+  const hgK = member.guild.channels.get(gc[member.guild.id].gkanal)
+    if (!hgK) return;
+   const embed = new Discord.RichEmbed()
+			.setTitle('Üye yasaklandı.')
+			.setAuthor(member.user.tag, member.user.avatarURL)
+			.setColor('RANDOM')
+			.setDescription(`<@!${member.user.id}>, ${member.user.tag}`)
+			.setThumbnail(member.user.avatarURL)
+			.setFooter(`Techno Bot Log Sistemi | ID: ${member.user.id}`)
+			.setTimestamp();
+			hgK.send({embed});
+
+		
+	})
+	
+client.on('guildBanRemove', async (guild, member) => {
+		    const fs = require('fs');
+let gc = JSON.parse(fs.readFileSync("./log.json", "utf8"));
+  
+  const hgK = member.guild.channels.get(gc[member.guild.id].gkanal)
+    if (!hgK) return;
+			var embed = new Discord.RichEmbed()
+			.setTitle('Üyenin yasaklaması kaldırıldı.')
+			.setAuthor(member.user.tag, member.user.avatarURL)
+			.setColor('RANDOM')
+			.setDescription(`<@!${member.user.id}>, ${member.user.tag}`)
+			.setThumbnail(member.user.avatarURL)
+			.setFooter(`Techno Bot Log Sistemi | ID: ${member.user.id}`)
+			.setTimestamp();
+			hgK.send({embed});
+		
+	})
+	
+client.on('messageDelete', async msg => {
+		if (!msg.guild) return;
+    const fs = require('fs');
+let gc = JSON.parse(fs.readFileSync("./log.json", "utf8"));
+  
+  const hgK = msg.guild.channels.get(gc[msg.guild.id].gkanal)
+    if (!hgK) return;
+			var embed = new Discord.RichEmbed()
+			.setAuthor(msg.author.tag, msg.author.avatarURL)
+			.setColor('RANDOM')
+			.setDescription(`<@!${msg.author.id}> tarafından <#${msg.channel.id}> kanalına gönderilen "${msg.content}" mesajı silindi.`)
+			.setFooter(`Techno Bot Log Sistemi | ID: ${msg.id}`)
+			hgK.send({embed});
+		
+	})
+
+client.on('channelCreate', async channel => {
+		if (!channel.guild) return;
+    const fs = require('fs');
+let gc = JSON.parse(fs.readFileSync("./log.json", "utf8"));
+  
+  const hgK = channel.guild.channels.get(gc[channel.guild.id].gkanal)
+    if (!hgK) return;
+		
+			if (channel.type === "text") {
+				var embed = new Discord.RichEmbed()
+				.setColor('RANDOM')
+				.setAuthor(channel.guild.name, channel.guild.iconURL)
+				.setDescription(`<#${channel.id}> kanalı oluşturuldu. _(metin kanalı)_`)
+				.setFooter(`Techno Bot Log Sistemi | ID: ${channel.id}`)
+				hgK.send({embed});
+			};
+			if (channel.type === "voice") {
+				var embed = new Discord.RichEmbed()
+					.setColor('RANDOM')
+				.setAuthor(channel.guild.name, channel.guild.iconURL)
+				.setDescription(`${channel.name} kanalı oluşturuldu. _(sesli kanal)_`)
+				.setFooter(`Techno Bot Log Sistemi | ID: ${channel.id}`)
+				hgK.send({embed});
+			}
+		
+	})
+
+
+
+
+
+
 /*lient.on("guildMemberAdd", async member => {
          let anan = member.user.avatarURL || member.user.defaultAvatarURL
     let memberChannel = await db.fetch(`memberChannel_${member.guild.id}`)

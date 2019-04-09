@@ -1,7 +1,7 @@
 const Discord = require('discord.js')
 const fs = require('fs');
-var ayarlar = require('../ayarlar.json');
-let kanal = JSON.parse(fs.readFileSync("././sunucuyaözelayarlar/log.json", "utf8"));
+var ayarlar = require('../loglar.json');
+let kanal = JSON.parse(fs.readFileSync("./log.json", "utf8"));
 
 exports.run = async (client, message, args) => {
 if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`Bu komutu kullanabilmek için **Yönetici** iznine sahip olmalısın!`);
@@ -11,8 +11,8 @@ if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`Bu kom
     if (!channel) {
         const embed = new Discord.RichEmbed()
         .setColor('RANDOM')
-        .setTitle('Başarılı!')
-        .setDescription(':x: | Kayıt kanalı ayarlamak için b!kayıt-ayarla #kanal')
+        .setTitle('Log ayarlama:')
+        .setDescription('Log kanalı ayarlamak için x+log-ayarla #kanal')
         message.channel.send({embed})
         return
     }
@@ -23,13 +23,13 @@ if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`Bu kom
         };
     }
   
-    fs.writeFile("././sunucuyaözelayarlar/log.json", JSON.stringify(kanal), (err) => {
+    fs.writeFile("./log.json", JSON.stringify(kanal), (err) => {
         console.log(err)
     })
   
     const embed = new Discord.RichEmbed()
     .setTitle('Başarılı!')
-    .setDescription(`:white_check_mark: | Kayıt kanalı ${channel} olarak ayarlandı.`)
+    .setDescription(`Log kanalı ${channel} olarak ayarlandı.`)
     .setColor('RANDOM')
     message.channel.send({embed})
   
@@ -39,12 +39,12 @@ if (!message.member.hasPermission("ADMINISTRATOR")) return message.reply(`Bu kom
 exports.conf = {
     enabled: true,
     guildOnly: false,
-    aliases: ['modlog'],
+    aliases: ['log-ayarlama','modlog','log'],
     permLevel: 0
 }
 
 exports.help = {
-    name: 'mod-log-ayarla',
-    description: 'Mod log kanalını ayarlar.',
-    usage: 'mod-log-ayarla <#kanal>'
+    name: 'log-ayarla',
+    description: 'Giriş çıkış kanalını ayarlar.',
+    usage: 'logayarla <#kanal>'
 }
