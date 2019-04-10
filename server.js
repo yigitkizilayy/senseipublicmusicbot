@@ -202,7 +202,7 @@ client.on("message", msg => {
   if (küfür.some(word => msg.content.toLowerCase().includes(word)) ) {
     if (!msg.member.hasPermission("ADMINISTRATOR")) {
       msg.delete()
-       msg.reply("Bu sunucuda küfürler **XiR** tarafından engellenmektedir! Küfür engeli Açık!").then(message => message.delete(3000));
+       msg.reply("Bu sunucuda küfürler **Techno Bot** tarafından engellenmektedir! Küfür engeli Açık!").then(message => message.delete(3500));
     }
 }
     }

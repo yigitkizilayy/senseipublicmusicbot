@@ -7,9 +7,9 @@ exports.run = async (client, message) => {
 	let args = message.content.split(' ').slice(1);
 	const secenekler = args.slice(0).join(' ');
 
-	if(secenekler.length < 1) return message.reply("**Açmak İstiyorsan:**```x+linkengelle aç``` **Kapatmak İstiyorsan:**```x+linkengelle kapat``` **yaz!**");
+	if(secenekler.length < 1) return message.reply("**Açmak İstiyorsan:**```!linkengelle aç``` **Kapatmak İstiyorsan:**```!linkengelle kapat``` **yaz!**");
 
-  if (secenekler !== "aç" && secenekler !== "kapat" && secenekler !== "on" && secenekler !== "off") return message.reply("**Açmak İstiyorsan:**```x+linkengelle aç``` **Kapatmak İstiyorsan:**```x+linkengelle kapat``` **yaz!**")
+  if (secenekler !== "aç" && secenekler !== "kapat" && secenekler !== "on" && secenekler !== "off") return message.reply("**Açmak İstiyorsan:**```!linkengelle aç``` **Kapatmak İstiyorsan:**```!linkengelle kapat``` **yaz!**")
 
 	if (secenekler === "aç" || secenekler === "on") {
 		
