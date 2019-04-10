@@ -9,7 +9,7 @@ exports.run = (client, message, params) => {
   .setDescription('Botta Yapılan Yenilikler Hakkında Bilgi Verir.')
   .setColor('RANDOM')
   //.addField(`Yenilikler`, '!!çal: İstediğin şarkıyı çalar.\n!!durklat: Müziği durdurur.\n!!devam: Müziği devam ettirir.\n!!kuyruk: Kuyruğu söyler\n!!geç: Geçerli çalınan müziği geçer\n!!ses: Belirlediğiniz değerde sesi açar.\n!!stop: Müziği kapatır.')
-  .addField(`Yenilikler`, '`!otorol`\n`!modlog` \n`!linkengelle` \n`!küfürengelle` \n`!h-e` \n`!sa-as` \n`!girişçıkış` ')
+  .addField(`Yenilikler`, '`!otorol`\n`!modlog` \n`!linkengelle` \n`!küfürengelle` \n`!h-e` \n`!sa-as` \n`!girişçıkış`\n`slowmode` ')
   if (!params[0]) {
     const commandNames = Array.from(client.commands.keys());
     const longest = commandNames.reduce((long, str) => Math.max(long, str.length), 0);
