@@ -361,7 +361,7 @@ client.on("guildMemberAdd", async member => {
         let username = member.user.username;
         if (member.guild.channels.get(memberChannel) === undefined || member.guild.channels.get(memberChannel) === null) return;
         if (member.guild.channels.get(memberChannel).type === "text") {
-            const bg = await Jimp.read("https://cdn.discordapp.com/attachments/450693709076365323/473184528148725780/guildAdd.png");
+            const bg = await Jimp.read("https://i.postimg.cc/LXrHDVJC/guildAdd.png");
             const userimg = await Jimp.read(anan);
             var font;
             if (member.user.tag.length < 15) font = await Jimp.loadFont(Jimp.FONT_SANS_128_WHITE);
@@ -385,7 +385,7 @@ client.on("guildMemberRemove", async member => {
         let username = member.user.username;
         if (member.guild.channels.get(memberChannel) === undefined || member.guild.channels.get(memberChannel) === null) return;
         if (member.guild.channels.get(memberChannel).type === "text") {
-            const bg = await Jimp.read("https://cdn.discordapp.com/attachments/450693709076365323/473184546477572107/guildRemove.png");
+            const bg = await Jimp.read("https://i.postimg.cc/zGJqxvfr/guild-Remove.png");
             const userimg = await Jimp.read(anan);
             var font;
             if (member.user.tag.length < 15) font = await Jimp.loadFont(Jimp.FONT_SANS_128_WHITE);
