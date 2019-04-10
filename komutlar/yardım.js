@@ -14,7 +14,9 @@ exports.run = (client, message, params) => {
   .addField(`Sunucu Komutları`, '!h-e: `Sunucunda everyone ve here engeller` \n!otorol: `sunucunuza gelen kislere otomatik rol verir detaylı bilgi için !oyardım.` \n!girisçikis:` Resimli gelen-giden ayarlar.`\n!sayaç: `sunucunuza sayaç ekleyebilirsiniz` \n!sa-as:`ayarlamalı sa-as komutu.` \nslowmode: `bulunduğunuz sunucudaki belirli kanala hız sınırı ekler.`')
   .addField(`Moderasyon Komutları`, '!sil:`bulunduğunuz yerdeki mesajları siler.`\n!ban: `Sunucuda istedğiniz kişiyi banlar.` \n!kick: `Sunucunuzdaki kişileri kicklersiniz` \n!modlog:` sunucunuzda olan bitenden haberdar olursunuz.`\n!linkengel: `sunucunuzda yapılan reklamları engeller`\nküfürengel: `sunucudaki küfürü engeller.` \n!mute: `sunucunuzdaki istediğiniz kişiyi susturur.`\n!unmute: `susturulan kişinin susturulması kaldırılır.` ')
   .addField(`Kullanıcı Komutları`, '!döviz: `Güncel kur fiyatlarını görürsünüz`\n!havadurumu: `Seçtiğiniz ilin hava durumunu gösterir.`\n!steam: `seçtiğiniz oyun hakkında bilgiler verir.`')
+  .addField(`Eğlence Komutları`, '!mcsunucu: `minecraft sunucusu hakkında bilgi verir`')
   .setDescription('Bottaki Komutlar Yenilenmektedir. Detaylı Bilgi İçin !davet Destek sunucusuna gelin!.')
+  
  //.addField(`------------------`, '-')
  // .addField(`:robot: Bot Commands :robot:`, '!prefix: `Changes prefix.` \n!davet: `İnvite the bot.` \n!ping: `ping.` \n!clear: `clear the messages.`')
  // .addField(`:musical_note: Music Commands :musical_note:`, '!play: `playing to music`. \n!pause: `stop music.` \n!continuation: `continues music.` \n!again: `repeats music` \n!passes: `passes music` \n!stop: `stop the music`')
