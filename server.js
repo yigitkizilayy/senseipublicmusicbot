@@ -271,6 +271,66 @@ client.on("guildMemberRemove", async member => {
 
 
 
+//ARLAMALI DAVET-TAKİP KOMUTU
+
+//Komut: https://paste.ee/p/WHEsh
+
+//Bot.Js'ye
+
+const invites = {};
+
+
+const wait = require('util').promisify(setTimeout);
+
+client.on('ready', () => {
+
+  wait(1000);
+
+
+  client.guilds.forEach(g => {
+    g.fetchInvites().then(guildInvites => {
+      invites[g.id] = guildInvites;
+    });
+  });
+});
+
+client.on('guildMemberAdd', member => {
+  
+  
+ 
+  member.guild.fetchInvites().then(guildInvites => {
+    
+    if (db.has(`dKanal_${member.guild.id}`) === false) return
+    const channel = db.fetch(`dKanal_${member.guild.id}`).replace("<#", "").replace(">", "")
+    
+    const ei = invites[member.guild.id];
+  
+    invites[member.guild.id] = guildInvites;
+ 
+    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+
+    const davetçi = client.users.get(invite.inviter.id);
+ 
+    
+   const embed = new Discord.RichEmbed()
+   .setColor('GREEN')
+   .setDescription(`**${member.user.tag}** Sunucuya Katıldı, Katıldığı davet linki: **${invite.code}** \n Davet eden kullanıcı: **${davetçi.tag}** \n **${davetçi.tag}** Adlı kullanıcının oluşturduğu **${invite.code}** Adlı davet linkinden gelen kullanıcı sayısı: **${invite.uses}**`)
+   member.guild.channels.get(channel).send(embed)
+  })
+});
+
+
+//Komutu Paylaşan ➽ @Furkan Gezer 
+
+
+
+
+
+
+
+
+
+
 client.on("guildMemberAdd", async member => {
          let anan = member.user.avatarURL || member.user.defaultAvatarURL
     let memberChannel = await db.fetch(`memberChannel_${member.guild.id}`)
