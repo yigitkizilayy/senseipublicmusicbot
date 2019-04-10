@@ -7,7 +7,7 @@ exports.run = async (client ,message, args) =>{
    let logkanali = message.mentions.channels.first();
    if (!logkanali) message.channel.send('Bir Log Kanalı Belirlemelisin')
 
-   db.set(`davetk_${message.guild.id}`, message.mentions.channels.first().id).then(i => {
+   db.set(`dkanal_${message.guild.id}`, message.mentions.channels.first().id).then(i => {
 
     message.channel.send(`:white_check_mark: Davet kanalı Başarıyla <#${i}> olarak ayarlandı.`)    
    })

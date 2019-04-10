@@ -270,6 +270,29 @@ client.on("guildMemberRemove", async member => {
 
 
 
+/*
+const invites = {};
+
+const wait = require('util').promisify(setTimeout);
+
+client.on('guildMemberAdd', async member => {
+  let davetChannel = await db.fetch(`davetk_${member.guild.id}`)
+  member.guild.fetchInvites().then(guildInvites => {
+    const ei = invites[member.guild.id];
+    invites[member.guild.id] = guildInvites;
+    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+    const inviter = client.users.get(invite.inviter.id);
+    
+    if (!member.guild.channels.get(davetChannel)) return console.log(`memberLogChannel`)
+    else member.guild.channels.get(davetChannel).send(`${member.user.tag} Sunucuya Katıldı. Hoşgeldin. \n<@${inviter.id}> Tarafından Davet Edildi! Toplam ${invite.uses} Kişi Davet Etmiş`)
+ 
+
+
+  })
+});*/
+
+
+
 
 //ARLAMALI DAVET-TAKİP KOMUTU
 
