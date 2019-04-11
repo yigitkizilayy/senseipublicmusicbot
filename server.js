@@ -29,7 +29,7 @@ setInterval(() => {
 
 
 
-const invites = {};
+/*const invites = {};
 const wait = require('util').promisify(setTimeout);
 
 client.on('ready', () => {
