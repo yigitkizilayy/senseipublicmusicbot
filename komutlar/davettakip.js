@@ -1,30 +1,60 @@
-const Discord = require('discord.js')
-const db = require('quick.db')
+const fs = require('fs');
+const ayarlar = require("../ayarlar.json");
+const Discord = require("discord.js")
+const db = require("quick.db")
 
-exports.run = async (client ,message, args) =>{
+exports.run = async (bot, message, args) => {
+  let davetlog = JSON.parse(fs.readFileSync('./ayarlar/davetlog.json', 'utf8'));
+  let kanalid = message.channel.id,
+    guildID = message.guild.id,
+    davetlkanal;
+
+  if (guildID in davetlog) davetlkanal = bot.channels.get(davetlog[guildID]).name;
+  else davetlkanal = "Ayarlanmamış";
+
+  if (!args[0]) 
+return message.channel.send(`
+**Davet Log:** \`\`${ayarlar.prefix}ayar davetlog #davet-log\`\` | **Kapatmak için**: \`\`${ayarlar.prefix}ayar davetlog kapat\`\` 
+
+**Davet Log Kanalı:**  ${davetlkanal} (${davetlog[guildID] == undefined ? "" : davetlog[guildID]}) `);
 
 
-   let logkanali = message.mentions.channels.first();
-   if (!logkanali) message.channel.send('Bir Log Kanalı Belirlemelisin')
+  switch (args[0]) {
+    case "davetk":
+    case "davetkanal":
+    case "davetlog":
+    case "davettakip":
+      if (!message.member.permissions.has("MANAGE_GUILD")) return message.channel.send("Gerekli izinlere sahip değilsiniz!");
+      if (!args[1]) return message.channel.send("Lütfen kanal belirtin!");
+      if (args[1].toLowerCase() == "kapat") {
+        delete davetlog[guildID];
+        fs.writeFile('./ayarlar/davetlog.json', JSON.stringify(davetlog), (err) => {
+          if (err) console.log(err);
+        });
+        message.channel.send("Davet Log Kanalı Kapatıldı!");
+      } else {
+        if (!message.mentions.channels.first()) return message.channel.send("Lütfen kanal belirtin!");
+        davetlog[guildID] = message.mentions.channels.first().id;
+        fs.writeFile('./ayarlar/davetlog.json', JSON.stringify(davetlog), (err) => {
+          if (err) console.log(err);
+        });
+        message.channel.send(`<#${davetlog[guildID]}> Davet Log Kanalı belirlendi!`);
+      }
+   
+  }
+}
 
-   db.set(`dkanal_${message.guild.id}`, message.mentions.channels.first().id).then(i => {
 
-    message.channel.send(`:white_check_mark: Davet kanalı Başarıyla <#${i}> olarak ayarlandı.`)    
-   })
+
+module.exports.conf = {
+  enabled: true,
+  guildOnly: false,
+  aliases: ["ayarlar"],
+  permLevel: 3
 };
-exports.conf = {
- enabled: true,
- guildOnly: false,
- aliases: ['davettakip', 'dt'],
- permLevel: 0
+
+module.exports.help = {
+  name: 'ayar',
+  description: '',
+  usage: 'ayar hg&bb #kanal'
 };
-
-exports.help = {
- name: 'davet-kanalı-ayarla',
- description: 'Davet Log Kanalını Belirler',
- usage: 'davet-kanal-ayarla #kanal'
-};
-
-
-//omutlara Atılacaktır.
-//omut Alıntıdır.

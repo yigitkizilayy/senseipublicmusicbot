@@ -29,7 +29,35 @@ setInterval(() => {
 
 
 
+const invites = {};
+const wait = require('util').promisify(setTimeout);
 
+client.on('ready', () => {
+  wait(1000);
+
+client.guilds.forEach(g => {
+    g.fetchInvites().then(guildInvites => {
+      invites[g.id] = guildInvites;
+    });
+  });
+});
+/*client.on('guildMemberAdd', member => {
+let davetlog = JSON.parse(fs.readFileSync('./ayarlar/davetlog.json', 'utf8'));
+  member.guild.fetchInvites().then(guildInvites => {
+    const ei = invites[member.guild.id];
+    invites[member.guild.id] = guildInvites;
+    const invite = guildInvites.find(i => ei.get(i.code).uses < i.uses);
+    const inviter = client.users.get(invite.inviter.id);
+const embed = new Discord.RichEmbed()
+.setDescription(`${member.user.username} Sunucuya katıldı! \n Davet Eden Kişi: \n<@${inviter.id}> \n Daveti Kullanan Kişi Sayısı:\n \`\`${invite.uses}\`\` \n Katıldığı Davet Kodu: \n**${invite.code}** \n Davet Linki: \n https://discord.gg/${invite.code}`)
+.setColor("RED")
+.setThumbnail(member.user.avatarURL)
+
+  member.guild.channels.find("id", davetlog[member.guild.id]).send({
+    embed
+  });
+  })
+})*/
 
 
 client.on('guildBanAdd', async (guild, member) => {
