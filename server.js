@@ -159,4 +159,4 @@ client.on('error', e => {
 
 
 client.login(process.env.TOKEN);
-//XiR
+//techno bot
