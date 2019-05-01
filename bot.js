@@ -183,7 +183,7 @@ client.on('message', async msg => {
 					let index = 0;
           
 				 msg.channel.sendEmbed(new Discord.RichEmbed()                  
-         .setTitle('XiR`S | Şarkı Seçimi')
+         .setTitle(':musical_note: | Şarkı Seçimi')
          .setAuthor(`${msg.author.tag}`, msg.author.avatarURL)
          .setThumbnail("https://i.postimg.cc/W1b1LW13/youtube-kids-new-logo.png")
          .setDescription(`${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}`)
@@ -209,7 +209,7 @@ client.on('message', async msg => {
 					console.error(err);
 					return msg.channel.sendEmbed(new Discord.RichEmbed()
           .setColor('RED')
-          .setDescription(':( | **Aradım Fakat Hiç Bir Sonuç Çıkmadı**'));
+          .setDescription(':( :headphones: | **Aradım Fakat Hiç Bir Sonuç Çıkmadı**'));
                 }
             }
 			return handleVideo(video, msg, voiceChannel);
@@ -256,7 +256,7 @@ client.on('message', async msg => {
     .setColor('RED'));
 		return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setColor('RED')
-    .setTitle("XiR`S | Çalan")                            
+    .setTitle(" :headphones: | Çalan")                            
     .addField('Başlık', `[${serverQueue.songs[0].title}](${serverQueue.songs[0].url})`, true)
     .addField("Süre", `${serverQueue.songs[0].durationm}:${serverQueue.songs[0].durations}`, true))
 	} else if (command === 'kuyruk') {
@@ -266,7 +266,7 @@ client.on('message', async msg => {
     .setColor('RED'));
 		  return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setColor('RANDOM')
-     .setTitle('XiR`S | Şarkı Kuyruğu')
+     .setTitle(':headphones: | Şarkı Kuyruğu')
     .setDescription(`${serverQueue.songs.map(song => `**${++index} -** ${song.title}`).join('\n')}`))
     .addField('Şu anda çalınan: ' + `${serverQueue.songs[0].title}`);
 	} else if (command === 'duraklat') {
@@ -364,7 +364,7 @@ function play(guild, song) {
 	dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
 
 	 serverQueue.textChannel.sendEmbed(new Discord.RichEmbed()                                   
-  .setTitle("**XiR`S | :microphone: Müzik Başladı**")
+  .setTitle("**:microphone: | Müzik Başladı**")
   .setThumbnail(`https://i.ytimg.com/vi/${song.id}/default.jpg`)
   .addField('\nBaşlık', `[${song.title}](${song.url})`, true)
   .addField("\nSes Seviyesi", `${serverQueue.volume}%`, true)
