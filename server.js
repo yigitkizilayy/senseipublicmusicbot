@@ -27,13 +27,6 @@ setInterval(() => {
 
 
 
-
-
-
-
-
-
-
 const log = message => {
   console.log(`[${moment().format('YYYY-MM-DD HH:mm:ss')}] ${message}`);
 };
@@ -158,5 +151,5 @@ client.on('error', e => {
 
 
 
-client.login(process.env.TOKEN);
+client.login(ayarlar.token);
 //techno bot
