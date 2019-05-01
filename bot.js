@@ -134,10 +134,7 @@ client.on('error', e => {
 client.login(ayarlar.token);
 //XiR
 const { GOOGLE_API_KEY } = require('./ayarlar.json');
-const YouTube = require('simple-youtube-api');
-const youtube = new YouTube(GOOGLE_API_KEY);
-const queue = new Map();  
-const ytdl = require('ytdl-core');
+const youtube = new YouTube('AIzaSyDSiyHBWZI9dDZBWXloNVhrHbpzTTfa0L8');
 
 client.on('message', async msg => {
 

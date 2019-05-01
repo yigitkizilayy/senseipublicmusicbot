@@ -15,11 +15,11 @@
 
   "description": "A simple Node app built on Express, instantly up and running.",
 
-  "main": "server.js",
+  "main": "bot.js",
 
   "scripts": {
 
-    "start": "node server.js"
+    "start": "node bot.js"
 
   },
 
