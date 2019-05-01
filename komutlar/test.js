@@ -6,16 +6,16 @@ exports.run = async (client, message, params) => {
   let prefix = ayarlar.prefix
  
   if (!params[0]) {
-    message.channel.sendCode("asciidoc",`:headphones:= Yardım Menüsü =:microphone:`
-.setColor('RANDOM')
-                             
+    message.channel.sendCode("asciidoc",`🎧 = Yardım Menüsü = 🎧
+                    
 ​
-${prefix}oynat    ➠  Belirtilen müziği oynatmayı sağlar.
-${prefix}durdur   ➠  Belirtilen müziği durdurmayı sağlar.
-${prefix}geç      ➠  Sıradaki müziğe geçiş yapar.
-${prefix}kuyruk   ➠  Sıradaki müzikleri gösteririr.
-${prefix}ses      ➠  Sesi belirtilen miktar kadar arttırır/azaltır. 
-${prefix}müzik    ➠  Müzik komutlarını gösterir.
+✅${prefix}oynat    ➠  Belirtilen müziği oynatmayı sağlar.            
+✅${prefix}durdur   ➠  Belirtilen müziği durdurmayı sağlar.           
+✅${prefix}geç      ➠  Sıradaki müziğe geçiş yapar.                   
+✅${prefix}kuyruk   ➠  Sıradaki müzikleri gösteririr.                 
+✅${prefix}ses      ➠  Sesi belirtilen miktar kadar arttırır/azaltır. 
+✅${prefix}duraklat ➠  Müziği durkaklatır.                            
+✅${prefix}devam    ➠  Müziği devam ettirir.                          
 ​
 # Komutlar hakkında yardım almak icin ${prefix}yardım <komut ismi>`);
   } else {
@@ -40,6 +40,6 @@ exports.conf = {
 
 exports.help = {
   name: 'yardım',
-  description: 'Komut kategorilerini gösterir.',
+  description: 'Botun yardım komutlarını gösterir.',
   usage: 'yardım'
 };
