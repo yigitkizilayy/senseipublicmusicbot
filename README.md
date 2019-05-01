@@ -1,2 +1,1 @@
-https://discord.gg/ZtTccY7
-Techno bot Discord sunucusu... 
+# HAZIR DHYROX MÜZİK BOTU
