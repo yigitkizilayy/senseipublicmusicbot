@@ -377,4 +377,3 @@ function play(guild, song) {
   .setImage(`https://i.ytimg.com/vi/${song.id}/hqdefault.jpg`)
   .setColor('RED'));
 }
-//XiR
