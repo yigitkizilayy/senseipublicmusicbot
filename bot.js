@@ -133,8 +133,7 @@ client.on('error', e => {
 });
 
 client.login(ayarlar.token);
-//XiR
-const { GOOGLE_API_KEY } = require('./ayarlar.json');
+
 const youtube = new YouTube('AIzaSyDSiyHBWZI9dDZBWXloNVhrHbpzTTfa0L8');
 
 client.on('message', async msg => {
