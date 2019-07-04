@@ -22,7 +22,7 @@ const ytdl = require('ytdl-core');
 const app = express();
 app.get("/", (request, response) => {
   response.sendStatus(200);
-    client.user.setStatus("dnd");
+    client.user.setStatus("online");
   client.user.setActivity(`?yardım | ?oynat`, { type: "LISTENING"});
 });
 app.listen(process.env.PORT);
