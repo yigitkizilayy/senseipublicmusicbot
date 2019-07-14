@@ -15,7 +15,8 @@ exports.run = async (client, message, params) => {
 ✅${prefix}kuyruk   ➠  Sıradaki müzikleri gösteririr.                 
 ✅${prefix}ses      ➠  Sesi belirtilen miktar kadar arttırır/azaltır. 
 ✅${prefix}duraklat ➠  Müziği durkaklatır.                            
-✅${prefix}devam    ➠  Müziği devam ettirir.                          
+✅${prefix}devam    ➠  Müziği devam ettirir.  
+✅${prefix}davet    ➠  Botun Davet Linkini Atar.
 ​
 # Komutlar hakkında yardım almak icin ${prefix}yardım <komut ismi>`);
   } else {
