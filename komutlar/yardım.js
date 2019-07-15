@@ -17,6 +17,7 @@ exports.run = async (client, message, params) => {
 ✅${prefix}duraklat ➠  Müziği durkaklatır.                            
 ✅${prefix}devam    ➠  Müziği devam ettirir.  
 ✅${prefix}davet    ➠  Botun Davet Linkini Atar.
+                  Yapımcım: ßyP3RF3CT#8138 
 ​
 # Komutlar hakkında yardım almak icin ${prefix}yardım <komut ismi>`);
   } else {
@@ -35,7 +36,7 @@ Kullanım  :: ${prefix}${command.help.usage}`);
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: [],
+  aliases: ["y"],
   permLevel: 0
 };
 
