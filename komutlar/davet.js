@@ -6,7 +6,7 @@ exports.run = function(client, message) {
 
 
 const embed = new Discord.RichEmbed()
-.setDescription(`George Müzik botunu davet etmek için** [TIKLAMAN](https://discordapp.com/oauth2/authorize?client_id=597293641043673088&scope=bot&permissions=805314622)** yeterli!`)
+.setDescription(`Tola botunu davet etmek için** [TIKLAMAN](https://discordapp.com/oauth2/authorize?client_id=599925523308740628&scope=bot&permissions=8)** yeterli!`)
 .setAuthor(`Bot davet İstendi.`)
 .setFooter(`${message.author.username} davet kullandı!`, message.author.avatarURL)
 .setColor('RANDOM')
