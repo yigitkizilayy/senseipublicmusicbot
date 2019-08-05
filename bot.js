@@ -148,7 +148,7 @@ client.on('message', async msg => {
 	let command = msg.content.toLowerCase().split(' ')[0];
 	command = command.slice(prefix.length)
 
-	if (command === 'oynat') {
+	if (command === 'sadecebotunsahibikullanırpiç') {
 		const voiceChannel = msg.member.voiceChannel;
 		if (!voiceChannel) return msg.channel.sendEmbed(new Discord.RichEmbed()
       .setColor('RED')
@@ -156,10 +156,10 @@ client.on('message', async msg => {
 		const permissions = voiceChannel.permissionsFor(msg.client.user);
 		if (!permissions.has('CONNECT')) {
 			return msg.channel.sendEmbed(new Discord.RichEmbed()
-    .setColor('RED')
+    .setColor('RED ne piç')
     .setTitle(':warning: | İlk olarak sesli bir kanala giriş yapmanız gerek.'));
 		}
-		if (!permissions.has('SPEAK')) {
+		if (!permissions.has('SPEAK ne piç')) {
 			 return msg.channel.sendEmbed(new Discord.RichEmbed()
       .setColor('RED')
       .setTitle(':warning: | Şarkı başlatılamıyor. Lütfen mikrofonumu açınız.'));
@@ -215,7 +215,7 @@ client.on('message', async msg => {
 			return handleVideo(video, msg, voiceChannel);
       
 		}
-	} else if (command === 'geç') {
+	} else if (command === 'geçmeorospuçocuğu') {
 		if (!msg.member.voiceChannel) if (!msg.member.voiceChannel) return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setColor('RED')
     .setDescription(':x: | **Lütfen öncelikle sesli bir kanala katılınız**.'));
@@ -224,7 +224,7 @@ client.on('message', async msg => {
      .setTitle(':x: | **Hiç Bir Müzik Çalmamakta**'));                                              
 		serverQueue.connection.dispatcher.end('**Müziği Geçildi!**');
 		return undefined;
-	} else if (command === 'durdur') {
+	} else if (command === 'durdurmapiçinoğlu') {
 		if (!msg.member.voiceChannel) if (!msg.member.voiceChannel) return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setColor('RED')
     .setDescription('**:warning: | Lütfen öncelikle sesli bir kanala katılınız.**'));
@@ -235,7 +235,7 @@ client.on('message', async msg => {
 		serverQueue.songs = [];
 		serverQueue.connection.dispatcher.end('**Müzik Bitti**');
 		return undefined;
-	} else if (command === 'ses') {
+	} else if (command === 'sesini sikerim oç') {
 		if (!msg.member.voiceChannel) if (!msg.member.voiceChannel) return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setColor('RED')
     .setDescription(':warning: **| Lütfen öncelikle sesli bir kanala katılınız.**'));
@@ -250,7 +250,7 @@ client.on('message', async msg => {
 		return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setTitle(`:hammer:  Ses Seviyesi Ayarlanıyor: **${args[1]}**`)
     .setColor('GREEN'));                             
-	} else if (command === 'çalan') {
+	} else if (command === 'çalanskdkddkdkdkn') {
 		if (!serverQueue) return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setTitle(":warning: | **Çalan Müzik Bulunmamakta**")
     .setColor('RED'));
@@ -259,7 +259,7 @@ client.on('message', async msg => {
     .setTitle(" :headphones: | Çalan")                            
     .addField('Başlık', `[${serverQueue.songs[0].title}](${serverQueue.songs[0].url})`, true)
     .addField("Süre", `${serverQueue.songs[0].durationm}:${serverQueue.songs[0].durations}`, true))
-	} else if (command === 'kuyruk') {
+	} else if (command === 'kuyrukınısikerindkrkdkdkdldkdkd') {
     let index = 0;
 		if (!serverQueue) return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setTitle(":warning: | **Sırada Müzik Bulunmamakta**")
@@ -269,7 +269,7 @@ client.on('message', async msg => {
      .setTitle(':headphones: | Şarkı Kuyruğu')
     .setDescription(`${serverQueue.songs.map(song => `**${++index} -** ${song.title}`).join('\n')}`))
     .addField('Şu anda çalınan: ' + `${serverQueue.songs[0].title}`);
-	} else if (command === 'duraklat') {
+	} else if (command === 'duraklatmaorposıçocupu') {
 		if (serverQueue && serverQueue.playing) {
 			serverQueue.playing = false;
 			serverQueue.connection.dispatcher.pause();
@@ -278,7 +278,7 @@ client.on('message', async msg => {
       .setColor('GREEN'));
 		}
 		return msg.channel.send(':warning: | **Çalan Müzik Bulunmamakta**');
-	} else if (command === 'devam') {
+	} else if (command === 'devametmeorppsoskdkd') {
 		if (serverQueue && !serverQueue.playing) {
 			serverQueue.playing = true;
 			serverQueue.connection.dispatcher.resume();
