@@ -11,13 +11,11 @@ exports.run = async (client, message, params) => {
 ​
 ✅${prefix}oynat    ➠  Belirtilen müziği oynatmayı sağlar.            
 ✅${prefix}durdur   ➠  Belirtilen müziği durdurmayı sağlar.           
-✅${prefix}geç      ➠  Sıradaki müziğe geçiş yapar.                   
-✅${prefix}kuyruk   ➠  Sıradaki müzikleri gösteririr.                 
-✅${prefix}ses      ➠  Sesi belirtilen miktar kadar arttırır/azaltır. 
+✅${prefix}geç      ➠  Sıradaki müziğe geçiş yapar.                                  
 ✅${prefix}duraklat ➠  Müziği durkaklatır.                            
-✅${prefix}devam    ➠  Müziği devam ettirir.  
+✅${prefix}devamet    ➠  Müziği devam ettirir.  
 ✅${prefix}davet    ➠  Botun Davet Linkini Atar.
-                  Yapımcım: ßyP3RF3CT#8138 
+                  Yapımcım: チ Kaan#8138  
 ​
 # Komutlar hakkında yardım almak icin ${prefix}yardım <komut ismi>`);
   } else {
