@@ -6,7 +6,7 @@ exports.run = async (client, message, params) => {
   let prefix = ayarlar.prefix
  
   if (!params[0]) {
-    message.channel.sendCode("asciidoc",`🎧 = Yardım Menüsü = 🎧
+    message.channel.sendCode("asciidoc", = Yardım Menüsü = 🎧
                     
 ​
 ✅${prefix}oynat    ➠  Belirtilen müziği oynatmayı sağlar.            
@@ -17,7 +17,7 @@ exports.run = async (client, message, params) => {
 ✅${prefix}davet    ➠  Botun Davet Linkini Atar.
                   Yapımcım: チ Kaan#8138  
 ​
-# Komutlar hakkında yardım almak icin ${prefix}yardım <komut ismi>`);
+# Komutlar hakkında yardım almak icin ${prefix}yardım <komut ismi>);
   } else {
     let command = params[0];
     if (client.commands.has(command)) {
