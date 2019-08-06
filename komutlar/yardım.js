@@ -6,7 +6,7 @@ exports.run = async (client, message, params) => {
   let prefix = ayarlar.prefix
  
   if (!params[0]) {
-    message.channel.sendCode("asciidoc",`🎧 = Yardım Menüsü = 🎧
+    message.channel.sendCode("asciidoc", =` Yardım Menüsü = 
                     
 ​
 ✅${prefix}oynat    ➠  Belirtilen müziği oynatmayı sağlar.            
