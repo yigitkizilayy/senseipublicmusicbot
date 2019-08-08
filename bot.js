@@ -376,3 +376,24 @@ function play(guild, song) {
   .setImage(`https://i.ytimg.com/vi/${song.id}/hqdefault.jpg`)
   .setColor('RED'));
 }
+
+
+
+
+
+client.on("message", message => {
+   const sie = [":no_entry: Yapımcım Değilsin :no_entry: "] 
+   const tmm = [":arrows_counterclockwise: Bot Yeniden Başlatılıyor...", " :arrows_counterclockwise:  Bot Yeniden Başlatılıyor..."]
+   let ananinsonucu = Math.floor(Math.random() * sie.length); 
+   let babaminsonucu = Math.floor(Math.random() * tmm.length); 
+   if (message.content.toLowerCase() === '?reboot') { 
+   if (message.author.id !== "597105433605570581") {
+        message.channel.sendEmbed(new Discord.RichEmbed().setDescription(sie[ananinsonucu]).setColor('RED'))
+    } else {
+        message.channel.sendEmbed(new Discord.RichEmbed().setDescription(tmm[babaminsonucu]).setColor('GREEN')).then(msg =>  { 
+        console.log(`Yeniden basliyom`); 
+        process.exit(0);
+    })
+}
+} 
+});
