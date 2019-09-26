@@ -18,7 +18,7 @@ return message.channel.send(embed)
 exports.conf = {
   enabled: true, 
   guildOnly: true, 
-  aliases: [''],
+  aliases: [],
   permLevel: 0 
 };
 
