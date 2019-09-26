@@ -18,9 +18,9 @@ module.exports.run = async(client, message, args) => {
     .addField(':desktop: Bellek kullanımı:', (process.memoryUsage().heapUsed / 2048 / 2048).toFixed(2))
     .addField(':book: Kütüphanesi;', `Discord.js`)
     .addField(`Discord.js sürümü:`, Discord.version)
-      .addField(':spy: Yapımcım:', '<@597105433605570581>  \n ')
-      .addField(':paperclip: Botun Başlanma Zamanı:', "Bot **01.07.2019**'da yapılmaya başlanmıştır")
-    .setFooter('GEORGE', client.user.avatarURL)
+      .addField(':spy: Yapımcım:', '<@624808655249997826>  \n ')
+      .addField(':paperclip: Botun Çıkış Tarihi:', "Bot **26.09.2019**'da Çıkmıştır")
+    .setFooter('PLUSKLY Müsic', client.user.avatarURL)
     .setTimestamp()
     message.channel.send(embed);
 }

@@ -6,11 +6,11 @@ exports.run = function(client, message) {
 
 
 const embed = new Discord.RichEmbed()
-.setDescription(`Tola botunu davet etmek için** [TIKLAMAN](https://discordapp.com/oauth2/authorize?client_id=599925523308740628&scope=bot&permissions=8)** yeterli!`)
-.setAuthor(`Bot davet İstendi.`)
-.setFooter(`${message.author.username} davet kullandı!`, message.author.avatarURL)
+.setDescription(`PLUSKLY Müsic Botunu Davet Etmek İçin** [TIKLAMAN](daevt link)** Yeterli!`)
+.setAuthor(`Demek Botumuzun Davet Linkini İstedin.`)
 .setColor('RANDOM')
 .setThumbnail(client.user.avatarURL)
+ .setFooter('PLUSKLY Müsic', client.user.avatarURL)
 return message.channel.send(embed)
 };
   
@@ -18,7 +18,7 @@ return message.channel.send(embed)
 exports.conf = {
   enabled: true, 
   guildOnly: true, 
-  aliases: ['davet2','invite'],
+  aliases: [''],
   permLevel: 0 
 };
 

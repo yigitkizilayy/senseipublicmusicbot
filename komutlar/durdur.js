@@ -31,7 +31,7 @@ exports.run = async (client, message, args) => {
 
 exports.conf = {
     enabled: true,
-    aliases: ['stop', 'dur'],
+    aliases: [''],
     permLevel: 0
 };
 
