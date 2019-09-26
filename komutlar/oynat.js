@@ -20,20 +20,20 @@ exports.run = async (client, message, args) => {
         
     const voiceChannelAdd = new RichEmbed()
     .setColor("RANDOM")
-    .setDescription(`<:XMARK6:585924168399192086>\`#HATA\` Lütfen herhangi bir sesli kanala katılınız.`)
+    .setDescription(`⚠️\`HATA\` Lütfen herhangi bir sesli kanala katılınız.`)
     if (!voiceChannel) return message.channel.send(voiceChannelAdd);
 
     var permissions = voiceChannel.permissionsFor(client.user);
     if (!permissions.has('CONNECT')) {
       const warningErr = new RichEmbed()
       .setColor("RANDOM")
-      .setDescription(`<:XMARK6:585924168399192086>\`#HATA\` Herhangi bir sesli kanala katılabilmek için yeterli iznim yok.`)
+      .setDescription(`⚠️\`HATA\` Herhangi bir sesli kanala katılabilmek için yeterli iznim yok.`)
       return message.channel.send(warningErr);
     }
     if (!permissions.has('SPEAK')) {
       const musicErr = new RichEmbed()
       .setColor("RANDOM")
-      .setDescription(`<:XMARK6:585924168399192086>\`#HATA\` Müzik açamıyorum/şarkı çalamıyorum çünkü kanalda konuşma iznim yok veya mikrofonum kapalı.`)
+      .setDescription(`⚠️\`HATA\` Müzik açamıyorum/şarkı çalamıyorum çünkü kanalda konuşma iznim yok veya mikrofonum kapalı.`)
       return message.channel.send(musicErr);
     }
       if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
@@ -61,7 +61,7 @@ exports.run = async (client, message, args) => {
           console.error(err);
           const songNope = new RichEmbed()
           .setColor("RANDOM")
-          .setDescription(`<:XMARK6:585924168399192086>\`#HATA\` Aradığınız isimde bir şarkı bulunamadı!`) 
+          .setDescription(`⚠️\`HATA\` Aradığınız isimde bir şarkı bulunamadı!`) 
           return message.channel.send(songNope);
         }
       }
@@ -147,6 +147,7 @@ exports.run = async (client, message, args) => {
         .addField("Şarkı Süresi", `${y}`, true)
         .addField("Şarkıyı Açan Kullanıcı", `${song.requester}`, true)
         .setThumbnail(song.thumbnail)
+         .setFooter('PLUSKLY Müsic', client.user.avatarURL)
         serverQueue.textChannel.send(playingBed);
       }  
 };
