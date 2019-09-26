@@ -31,7 +31,7 @@ if(!message.member.hasPermission("KİCK_MEMBERS")) return message.reply("Bu Komu
 
 exports.conf = {
     enabled: true,
-    aliases: ['skip','s'],
+    aliases: ['g'],
     permLevel: 0
 };
 

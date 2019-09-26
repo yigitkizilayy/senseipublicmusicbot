@@ -31,12 +31,12 @@ exports.run = async (client, message, args) => {
 
 exports.conf = {
     enabled: true,
-    aliases: [''],
+    aliases: ['ç'],
     permLevel: 0
 };
 
 exports.help = {
-    name: 'durdur',
+    name: 'botçık',
     description: 'Oynatılan/çalan şarkıyı kapatır.',
     usage: 'durdur'
 };
