@@ -397,5 +397,3 @@ client.on("message", message => {
 }
 } 
 });
-
-
