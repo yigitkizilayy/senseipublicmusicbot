@@ -10,19 +10,18 @@ exports.run = (client, message) => {
     .setColor('RANDOM')
     .setTimestamp()
     .addField('**Yapımcım: **', '<@624808655249997826>')
-     .addField('Bir S')
     message.channel.sendEmbed(ozelmesajkontrol) }
 };
 
 exports.conf = {
   enabled: true,
   guildOnly: false,
-  aliases: ['yapımcım'],
+  aliases: [],
   permLevel: 0
 };
 
 exports.help = {
-  name: 'yapımcm',
+  name: 'yapımcım',
   description: 'Yapimcimi Gosterir.',
   usage: 'yapımcım'
 };
