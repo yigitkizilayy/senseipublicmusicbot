@@ -37,6 +37,6 @@ exports.conf = {
 
 exports.help = {
     name: 'botçık',
-    description: 'Oynatılan/çalan şarkıyı kapatır.',
-    usage: 'durdur'
+    description: 'Botu Kanaldan Çıkartır ve Şarkıyı Kapatır.',
+    usage: 'botçık'
 };
