@@ -6,7 +6,7 @@ exports.run = function(client, message) {
 
 
 const embed = new Discord.RichEmbed()
-.setDescription(`PLUSKLY Müsic Botunu Davet Etmek İçin** [TIKLAMAN](daevt link)** Yeterli!`)
+.setDescription(`PLUSKLY Müsic Botunu Davet Etmek İçin** [TIKLAMAN](https://discordapp.com/oauth2/authorize?client_id=626785518302003208&scope=bot&permissions=2146958847)** Yeterli!`)
 .setAuthor(`Demek Botumuzun Davet Linkini İstedin.`)
 .setColor('RANDOM')
 .setThumbnail(client.user.avatarURL)
