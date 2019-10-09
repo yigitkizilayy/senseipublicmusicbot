@@ -23,7 +23,7 @@ const app = express();
 app.get("/", (request, response) => {
   response.sendStatus(200);
     client.user.setStatus("online");
-  client.user.setActivity(`tk!yardım | tk!davet | tk+o`, { type: "LISTENING"});
+  client.user.setActivity(`tc!yardım | tc!davet | tc!o ,) { type: "LISTENING"});
 });
 app.listen(process.env.PORT);
 setInterval(() => {

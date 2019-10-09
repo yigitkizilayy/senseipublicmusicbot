@@ -6,7 +6,7 @@ exports.run = (client, message, params) => {
   const embedyardim = new Discord.RichEmbed()
   .setThumbnail(client.user.avatarURL)
   .setFooter('Technology Codes Music', client.user.avatarURL) 
-  .setDescription(`** Technology Code's Music Bot Komutları**\n\n:musical_note:\`tk!oynat\` = **Yazdığınız şarkıyı çalar.** **(tk!o)** \n :musical_note:\`tk!geç\` = **Dinlediğiniz Şarkıyı Geçer.** **(tk!g)** \n :musical_note:\`tk!botçık\` = **Şarkıyı Durdurur Ve Bot Odadan Ayrılır.** **(tk!ç)** \n :musical_note:\`tk!duraklat\` = **Şarkıyı Durdurur**. **(tk!d)** \n :musical_note:\`tk!devamet\` = **Durdurulan Şarkı Devam Eder**.**(tk!de)** \n :musical_note:\`tk!davet\``)
+  .setDescription(`** Technology Code's Music Bot Komutları**\n\n:musical_note:\`tc!oynat\` = **Yazdığınız şarkıyı çalar.** **(tc!o)** \n :musical_note:\`tc!geç\` = **Dinlediğiniz Şarkıyı Geçer.** **(tc!g)** \n :musical_note:\`tc!botçık\` = **Şarkıyı Durdurur Ve Bot Odadan Ayrılır.** **(tc!ç)** \n :musical_note:\`tc!duraklat\` = **Şarkıyı Durdurur**. **(tk!d)** \n :musical_note:\`tc!devamet\` = **Durdurulan Şarkı Devam Eder**.**(tc!de)** \n :musical_note:\`tc!davet\``)
   .setColor(0x00ffff)
   .setTimestamp()
  message.channel.send(embedyardim);
