@@ -5,8 +5,8 @@ const prefix = 'g!'
 exports.run = (client, message, params) => {
   const embedyardim = new Discord.RichEmbed()
   .setThumbnail(client.user.avatarURL)
-  .setFooter('PLUSKLY Müsic', client.user.avatarURL) 
-  .setDescription(`**PLUSKLY Müsic 2 Bot Komutları**\n\n:musical_note:\`pm+oynat\` = **Yazdığınız şarkıyı çalar.** **(pm+o)** \n :musical_note:\`pm+geç\` = **Dinlediğiniz Şarkıyı Geçer.** **(pm+g)** \n :musical_note:\`pm+botçık\` = **Şarkıyı Durdurur Ve Bot Odadan Ayrılır.** **(pm+ç)** \n :musical_note:\`pm+duraklat\` = **Şarkıyı Durdurur**. **(pm+d)** \n :musical_note:\`pm+devamet\` = **Durdurulan Şarkı Devam Eder**.**(pm+de)** \n :musical_note:\`pm!davet\``)
+  .setFooter('Technology Codes Music', client.user.avatarURL) 
+  .setDescription(`** Technology Code's Music Bot Komutları**\n\n:musical_note:\`tk!oynat\` = **Yazdığınız şarkıyı çalar.** **(tk!o)** \n :musical_note:\`tk!geç\` = **Dinlediğiniz Şarkıyı Geçer.** **(tk!g)** \n :musical_note:\`tk!botçık\` = **Şarkıyı Durdurur Ve Bot Odadan Ayrılır.** **(tk!ç)** \n :musical_note:\`tk!duraklat\` = **Şarkıyı Durdurur**. **(tk!d)** \n :musical_note:\`tk!devamet\` = **Durdurulan Şarkı Devam Eder**.**(tk!de)** \n :musical_note:\`tk!davet\``)
   .setColor(0x00ffff)
   .setTimestamp()
  message.channel.send(embedyardim);
