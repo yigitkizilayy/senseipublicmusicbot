@@ -147,7 +147,7 @@ exports.run = async (client, message, args) => {
         .addField("Şarkı Süresi", `${y}`, true)
         .addField("Şarkıyı Açan Kullanıcı", `${song.requester}`, true)
         .setThumbnail(song.thumbnail)
-         .setFooter('PMüsic', client.user.avatarURL)
+         .setFooter('Technology Codes Music', client.user.avatarURL)
         serverQueue.textChannel.send(playingBed);
       }  
 };
