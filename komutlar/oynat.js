@@ -14,25 +14,25 @@ exports.run = async (client, message, args) => {
     var voiceChannel = message.member.voiceChannel;//tüm thisleri message yap 
 
     const embed = new RichEmbed()
-    .setColor("RANDOM")
+    .setColor("#0f0f0f")
     .setDescription("Lütfen Dinlemek istediğin şarkıyı yazın! (Şarkı ismi veya Youtube URLsi)")
     if (!args[0]) return message.channel.send(embed);
         
     const voiceChannelAdd = new RichEmbed()
-    .setColor("RANDOM")
+    .setColor("#0f0f0f")
     .setDescription(`⚠️\`HATA\` Lütfen herhangi bir sesli kanala katılınız.`)
     if (!voiceChannel) return message.channel.send(voiceChannelAdd);
 
     var permissions = voiceChannel.permissionsFor(client.user);
     if (!permissions.has('CONNECT')) {
       const warningErr = new RichEmbed()
-      .setColor("RANDOM")
+      .setColor("#0f0f0f")
       .setDescription(`⚠️\`HATA\` Herhangi bir sesli kanala katılabilmek için yeterli iznim yok.`)
       return message.channel.send(warningErr);
     }
     if (!permissions.has('SPEAK')) {
       const musicErr = new RichEmbed()
-      .setColor("RANDOM")
+      .setColor("#0f0f0f")
       .setDescription(`⚠️\`HATA\` Müzik açamıyorum/şarkı çalamıyorum çünkü kanalda konuşma iznim yok veya mikrofonum kapalı.`)
       return message.channel.send(musicErr);
     }
@@ -44,7 +44,7 @@ exports.run = async (client, message, args) => {
         await handleVideo(video2, message.message, voiceChannel, true);
       }
       const PlayingListAdd = new RichEmbed()
-      .setColor("RANDOM")
+      .setColor("#0f0f0f")
       .setDescription(`[${playlist.title}](https://www.youtube.com/watch?v=${playlist.id}) adlı şarkı oynatma listesine Eklendi!`)
       return message.channel.send(PlayingListAdd);
     } else {
@@ -60,7 +60,7 @@ exports.run = async (client, message, args) => {
         } catch (err) {
           console.error(err);
           const songNope = new RichEmbed()
-          .setColor("RANDOM")
+          .setColor("#0f0f0f")
           .setDescription(`⚠️\`HATA\` Aradığınız isimde bir şarkı bulunamadı!`) 
           return message.channel.send(songNope);
         }
@@ -141,7 +141,7 @@ exports.run = async (client, message, args) => {
         }
 
         const playingBed = new RichEmbed()
-        .setColor("RANDOM")
+        .setColor("#0f0f0f")
         .setAuthor(`Şimdi Oynatılıyor`, song.thumbnail)
         .setDescription(`[${song.title}](${song.url})`)
         .addField("Şarkı Süresi", `${y}`, true)

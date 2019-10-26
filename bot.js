@@ -23,7 +23,7 @@ const app = express();
 app.get("/", (request, response) => {
   response.sendStatus(200);
     client.user.setStatus("online");
-  client.user.setActivity(`tc!yardım | tc!davet | tc!o`,{ type: "LISTENING"});
+  client.user.setActivity(`b!yardım | b!davet | b!o`,{ type: "LISTENING"});
 });
 app.listen(process.env.PORT);
 setInterval(() => {
@@ -151,17 +151,17 @@ client.on('message', async msg => {
 	if (command === 'sadecebotunsahibikullanırpiç') {
 		const voiceChannel = msg.member.voiceChannel;
 		if (!voiceChannel) return msg.channel.sendEmbed(new Discord.RichEmbed()
-      .setColor('RED')
+      .setColor('BLACK')
     .setDescription(':warning: | İlk olarak sesli bir kanala giriş yapmanız gerek.'));
 		const permissions = voiceChannel.permissionsFor(msg.client.user);
 		if (!permissions.has('CONNECT')) {
 			return msg.channel.sendEmbed(new Discord.RichEmbed()
-    .setColor('RED ne piç')
+    .setColor('BLACK')
     .setTitle(':warning: | İlk olarak sesli bir kanala giriş yapmanız gerek.'));
 		}
 		if (!permissions.has('SPEAK ne piç')) {
 			 return msg.channel.sendEmbed(new Discord.RichEmbed()
-      .setColor('RED')
+      .setColor('BLACK')
       .setTitle(':warning: | Şarkı başlatılamıyor. Lütfen mikrofonumu açınız.'));
         }
 
@@ -188,7 +188,7 @@ client.on('message', async msg => {
          .setThumbnail("https://i.postimg.cc/W1b1LW13/youtube-kids-new-logo.png")
          .setDescription(`${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}`)
          .setFooter('Lütfen 1-10 arasında bir rakam seçiniz 10 saniye içinde liste iptal edilecektir.')
-         .setColor('RED'));
+         .setColor('BLACK'));
           msg.delete(5000)
          
 					try {
@@ -200,7 +200,7 @@ client.on('message', async msg => {
 					} catch (err) {
 						console.error(err);
 						 return msg.channel.sendEmbed(new Discord.RichEmbed()
-            .setColor('RED')
+            .setColor('BLACK')
             .setDescription(':warning: | **Şarkı Değeri Belirtmediğiniz İçin Seçim İptal Edilmiştir**.'));
                     }
 					const videoIndex = parseInt(response.first().content);
@@ -208,7 +208,7 @@ client.on('message', async msg => {
 				} catch (err) {
 					console.error(err);
 					return msg.channel.sendEmbed(new Discord.RichEmbed()
-          .setColor('RED')
+          .setColor('BLACK')
           .setDescription(':( :headphones: | **Aradım Fakat Hiç Bir Sonuç Çıkmadı**'));
                 }
             }
@@ -217,19 +217,19 @@ client.on('message', async msg => {
 		}
 	} else if (command === 'geçmeorospuçocuğu') {
 		if (!msg.member.voiceChannel) if (!msg.member.voiceChannel) return msg.channel.sendEmbed(new Discord.RichEmbed()
-    .setColor('RED')
+    .setColor('BLACK')
     .setDescription(':x: | **Lütfen öncelikle sesli bir kanala katılınız**.'));
 		if (!serverQueue) return msg.channel.sendEmbed(new Discord.RichEmbed()
-     .setColor('RED')
+     .setColor('BLACK')
      .setTitle(':x: | **Hiç Bir Müzik Çalmamakta**'));                                              
 		serverQueue.connection.dispatcher.end('**Müziği Geçildi!**');
 		return undefined;
 	} else if (command === 'durdurmapiçinoğlu') {
 		if (!msg.member.voiceChannel) if (!msg.member.voiceChannel) return msg.channel.sendEmbed(new Discord.RichEmbed()
-    .setColor('RED')
+    .setColor('BLACK')
     .setDescription('**:warning: | Lütfen öncelikle sesli bir kanala katılınız.**'));
 		if (!serverQueue) return msg.channel.sendEmbed(new Discord.RichEmbed()
-     .setColor('RED')
+     .setColor('BLACK')
      .setTitle(':warning: **| Hiç Bir Müzik Çalmamakta**'));                                              
 		msg.channel.send(`:stop_button: **${serverQueue.songs[0].title}** Adlı Müzik Durduruldu`);
 		serverQueue.songs = [];
@@ -237,25 +237,25 @@ client.on('message', async msg => {
 		return undefined;
 	} else if (command === 'sesini sikerim oç') {
 		if (!msg.member.voiceChannel) if (!msg.member.voiceChannel) return msg.channel.sendEmbed(new Discord.RichEmbed()
-    .setColor('RED')
+    .setColor('BLACK')
     .setDescription(':warning: **| Lütfen öncelikle sesli bir kanala katılınız.**'));
 		if (!serverQueue) return msg.channel.sendEmbed(new Discord.RichEmbed()
-     .setColor('RED')
+     .setColor('BLACK')
      .setTitle(':warning:| **Hiç Bir Müzik Çalmamakta**'));                                              
 		if (!args[1]) return msg.channel.sendEmbed(new Discord.RichEmbed()
    .setTitle(`:warning: Şuanki Ses Seviyesi: **${serverQueue.volume}**`)
-    .setColor('BLUE'))
+    .setColor('BLACK'))
 		serverQueue.volume = args[1];
 		serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 5);
 		return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setTitle(`:hammer:  Ses Seviyesi Ayarlanıyor: **${args[1]}**`)
-    .setColor('GREEN'));                             
+    .setColor('BLACK'));                             
 	} else if (command === 'çalanskdkddkdkdkn') {
 		if (!serverQueue) return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setTitle(":warning: | **Çalan Müzik Bulunmamakta**")
-    .setColor('RED'));
+    .setColor('BLACK'));
 		return msg.channel.sendEmbed(new Discord.RichEmbed()
-    .setColor('RED')
+    .setColor('BLACK')
     .setTitle(" :headphones: | Çalan")                            
     .addField('Başlık', `[${serverQueue.songs[0].title}](${serverQueue.songs[0].url})`, true)
     .addField("Süre", `${serverQueue.songs[0].durationm}:${serverQueue.songs[0].durations}`, true))
@@ -263,7 +263,7 @@ client.on('message', async msg => {
     let index = 0;
 		if (!serverQueue) return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setTitle(":warning: | **Sırada Müzik Bulunmamakta**")
-    .setColor('RED'));
+    .setColor('BLACK'));
 		  return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setColor('RANDOM')
      .setTitle(':headphones: | Şarkı Kuyruğu')
@@ -275,7 +275,7 @@ client.on('message', async msg => {
 			serverQueue.connection.dispatcher.pause();
 			return msg.channel.sendEmbed(new Discord.RichEmbed()
       .setTitle("**:pause_button: Müzik Senin İçin Durduruldu!**")
-      .setColor('GREEN'));
+      .setColor('BLACK'));
 		}
 		return msg.channel.send(':warning: | **Çalan Müzik Bulunmamakta**');
 	} else if (command === 'devametmeorppsoskdkd') {
@@ -284,11 +284,11 @@ client.on('message', async msg => {
 			serverQueue.connection.dispatcher.resume();
 			return msg.channel.sendEmbed(new Discord.RichEmbed()
       .setTitle("**:arrow_forward: Müzik Senin İçin Devam Etmekte!**")
-      .setColor('GREEN'));
+      .setColor('BLACK'));
 		}
 		return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setTitle(":warning: ** | Çalan Müzik Bulunmamakta.**")
-    .setColor('RED'));
+    .setColor('BLACK'));
 	}
   
 
@@ -330,7 +330,7 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 			queue.delete(msg.guild.id);
 			return msg.channel.sendEmbed(new Discord.RichEmbed()
       .setTitle(`:warning: **Şarkı Sisteminde Problem Var Hata Nedeni: ${error}**`)
-      .setColor('RED'))
+      .setColor('BLACK'))
 		}
 	} else {
 		serverQueue.songs.push(song);
@@ -338,7 +338,7 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 		if (playlist) return undefined;
 		return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setTitle(`:arrow_heading_up:  **${song.title}** Adlı Müzik Kuyruğa Eklendi!`)
-    .setColor('GREEN'))
+    .setColor('BLACK'))
 	}
 	return undefined;
 }
@@ -374,7 +374,7 @@ function play(guild, song) {
   .addField("Kanal İsmi", `${song.best}`, true)
   .addField("Video Linki", `${song.url}`, true)                              
   .setImage(`https://i.ytimg.com/vi/${song.id}/hqdefault.jpg`)
-  .setColor('RED'));
+  .setColor('BLACK'));
 }
 
 
@@ -387,7 +387,7 @@ client.on("message", message => {
    let ananinsonucu = Math.floor(Math.random() * sie.length); 
    let babaminsonucu = Math.floor(Math.random() * tmm.length); 
    if (message.content.toLowerCase() === '?reboot') { 
-   if (message.author.id !== "597105433605570581") {
+   if (message.author.id !== "598227510010052608") {
         message.channel.sendEmbed(new Discord.RichEmbed().setDescription(sie[ananinsonucu]).setColor('RED'))
     } else {
         message.channel.sendEmbed(new Discord.RichEmbed().setDescription(tmm[babaminsonucu]).setColor('GREEN')).then(msg =>  { 

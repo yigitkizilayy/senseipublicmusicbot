@@ -14,7 +14,7 @@ exports.run = async (client, message, args) => {
     var voiceChannel = message.member.voiceChannel;
         
     const a = new RichEmbed()
-    .setColor("RANDOM")
+    .setColor("#0f0f0f")
     .setDescription(`Bir sesli kanalda değilsin.`)  
   if (!voiceChannel) return message.channel.send(a)
 
@@ -22,12 +22,12 @@ exports.run = async (client, message, args) => {
     serverQueue.playing = false;
     serverQueue.connection.dispatcher.pause();
         const asjdhsaasjdhaadssad = new RichEmbed()
-    .setColor("RANDOM")
+    .setColor("#0f0f0f")
     .setDescription(`Şarkı başarıyla duraklatıldı!`)
       return message.channel.send(asjdhsaasjdhaadssad);
     }
     const b = new RichEmbed()
-    .setColor("RANDOM")
+    .setColor("#0f0f0f")
     .setDescription(`Şuanda herhangi bir şarkı çalmıyor.`)
     if (!serverQueue) return message.channel.send(b);
 

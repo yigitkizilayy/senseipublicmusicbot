@@ -14,15 +14,15 @@ exports.run = async (client, message, args) => {
     var voiceChannel = message.member.voiceChannel;
         
     const err0 = new RichEmbed()
-      .setColor("RANDOM")
+      .setColor("#0f0f0f")
       .setDescription(`Bir sesli kanalda değilsin.`) 
     if (!voiceChannel) return message.channel.send(err0);
     const err05 = new RichEmbed()
-    .setColor("RANDOM")
+    .setColor("#0f0f0f")
     .setDescription(`Şuanda herhangi bir şarkı çalmıyor.`)
     if (!serverQueue) return message.channel.send(err05);
     const songSkip = new RichEmbed()
-    .setColor("RANDOM")
+    .setColor("#0f0f0f")
     .setDescription(`Şarkı başarıyla geçildi!`)
     serverQueue.connection.dispatcher.end('');
     message.channel.send(songSkip)
