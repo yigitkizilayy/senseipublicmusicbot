@@ -21,7 +21,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: 'yardım',
+  name: 'müzik',
   description: 'yardım',
   usage: 'yardım'
 };
