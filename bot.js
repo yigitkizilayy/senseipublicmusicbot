@@ -19,16 +19,7 @@ const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
 client.queue = new Map()
 
-const app = express();
-app.get("/", (request, response) => {
-  response.sendStatus(200);
-    client.user.setStatus("online");
-  client.user.setActivity(`b!yardım | b!davet | b!o`,{ type: "LISTENING"});
-});
-app.listen(process.env.PORT);
-setInterval(() => {
-  http.get(`http://${process.env.PROJECT_DOMAIN}.glitch.me/`);
-}, 2800);
+
 
 var prefix = ayarlar.prefix;
 
