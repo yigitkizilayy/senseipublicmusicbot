@@ -62,7 +62,7 @@ exports.run = async (client, message, args) => {
           console.error(err);
           const songNope = new RichEmbed()
           .setColor("#0f0f0f")
-          .setDescription(`⚠️\`HATA\` Aradığınız isimde bir şarkı bulunamadı!`) 
+          .setDescription(`:x: No song could be found with the name you were looking for!`) 
           return message.channel.send(songNope);
         }
       }
@@ -100,9 +100,9 @@ exports.run = async (client, message, args) => {
             queueConstruct.connection = connection;
             play(message.guild, queueConstruct.songs[0]);
           } catch (error) {
-            console.error(`Ses kanalına giremedim HATA: ${error}`);
+            console.error(`I couldn't get into the audio channel ERROR: ${error}`);
             queue.delete(message.guild.id);
-            return message.channel.send(`Ses kanalına giremedim HATA: ${error}`);
+            return message.channel.send(`I couldn't get into the audio channel ERROR: ${error}`);
           }
         } else {
           serverQueue.songs.push(song);
@@ -143,24 +143,24 @@ exports.run = async (client, message, args) => {
 
         const playingBed = new RichEmbed()
         .setColor("#0f0f0f")
-        .setAuthor(`Şimdi Oynatılıyor`, song.thumbnail)
+        .setAuthor(`Now Playing`, song.thumbnail)
         .setDescription(`[${song.title}](${song.url})`)
-        .addField("Şarkı Süresi", `${y}`, true)
-        .addField("Şarkıyı Açan Kullanıcı", `${song.requester}`, true)
+        .addField("Estimated time until playing", `${y}`, true)
+        .addField("The User Who Opened the Song", `${song.requester}`, true)
         .setThumbnail(song.thumbnail)
-         .setFooter('Technology Codes Music', client.user.avatarURL)
+         .setFooter("Westly's Bot Satış Merkezi", client.user.avatarURL)
         serverQueue.textChannel.send(playingBed);
       }  
 };
 
 exports.conf = {
     enabled: true,
-    aliases: ['o'],
+    aliases: ['p'],
     permLevel: 0
 };
 
 exports.help = {
-    name: 'oynat',
+    name: 'play',
     description: 'Belirttiğiniz şarkıyı bulunduğunuz sesli kanalda çalar/oynatır.',
     usage: 'oynat [şarkı adı]'
 };
