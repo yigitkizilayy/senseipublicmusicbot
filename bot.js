@@ -206,51 +206,32 @@ client.on('message', async msg => {
 			return handleVideo(video, msg, voiceChannel);
       
 		}
-	} else if (command === 'geçmeorospuçocuğu') {
+	
+	} else if (command === 'volume') {
 		if (!msg.member.voiceChannel) if (!msg.member.voiceChannel) return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setColor('BLACK')
     .setDescription(':x: **You have to be in a voice channel to use this command.**'));
 		if (!serverQueue) return msg.channel.sendEmbed(new Discord.RichEmbed()
      .setColor('BLACK')
-     .setTitle(':x: | **Hiç Bir Müzik Çalmamakta**'));                                              
-		serverQueue.connection.dispatcher.end('**Müziği Geçildi!**');
-		return undefined;
-	} else if (command === 'durdurmapiçinoğlu') {
-		if (!msg.member.voiceChannel) if (!msg.member.voiceChannel) return msg.channel.sendEmbed(new Discord.RichEmbed()
-    .setColor('BLACK')
-    .setDescription('**:warning: | Lütfen öncelikle sesli bir kanala katılınız.**'));
-		if (!serverQueue) return msg.channel.sendEmbed(new Discord.RichEmbed()
-     .setColor('BLACK')
-     .setTitle(':warning: **| Hiç Bir Müzik Çalmamakta**'));                                              
-		msg.channel.send(`:stop_button: **${serverQueue.songs[0].title}** Adlı Müzik Durduruldu`);
-		serverQueue.songs = [];
-		serverQueue.connection.dispatcher.end('**Müzik Bitti**');
-		return undefined;
-	} else if (command === 'sesini sikerim oç') {
-		if (!msg.member.voiceChannel) if (!msg.member.voiceChannel) return msg.channel.sendEmbed(new Discord.RichEmbed()
-    .setColor('BLACK')
-    .setDescription(':warning: **| Lütfen öncelikle sesli bir kanala katılınız.**'));
-		if (!serverQueue) return msg.channel.sendEmbed(new Discord.RichEmbed()
-     .setColor('BLACK')
-     .setTitle(':warning:| **Hiç Bir Müzik Çalmamakta**'));                                              
+     .setTitle(":x: There's no song playing right now."));                                              
 		if (!args[1]) return msg.channel.sendEmbed(new Discord.RichEmbed()
-   .setTitle(`:warning: Şuanki Ses Seviyesi: **${serverQueue.volume}**`)
+   .setTitle(` **${serverQueue.volume}**`)
     .setColor('BLACK'))
 		serverQueue.volume = args[1];
 		serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 5);
 		return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setTitle(`:hammer:  Ses Seviyesi Ayarlanıyor: **${args[1]}**`)
     .setColor('BLACK'));                             
-	} else if (command === 'çalanskdkddkdkdkn') {
+	} else if (command === 'now') {
 		if (!serverQueue) return msg.channel.sendEmbed(new Discord.RichEmbed()
-    .setTitle(":warning: | **Çalan Müzik Bulunmamakta**")
+    .setTitle(":x: **There are no songs playing at the moment.**")
     .setColor('BLACK'));
 		return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setColor('BLACK')
-    .setTitle(" :headphones: | Çalan")                            
-    .addField('Başlık', `[${serverQueue.songs[0].title}](${serverQueue.songs[0].url})`, true)
-    .addField("Süre", `${serverQueue.songs[0].durationm}:${serverQueue.songs[0].durations}`, true))
-	} else if (command === 'kuyrukınısikerindkrkdkdkdldkdkd') {
+    .setTitle(" :headphones: | Now Playing")                            
+    .addField('Song Name', `[${serverQueue.songs[0].title}](${serverQueue.songs[0].url})`, true)
+    .addField("Estimated time until playing", `${serverQueue.songs[0].durationm}:${serverQueue.songs[0].durations}`, true))
+	} else if (command === '') {
     let index = 0;
 		if (!serverQueue) return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setTitle(":warning: | **Sırada Müzik Bulunmamakta**")
@@ -260,31 +241,77 @@ client.on('message', async msg => {
      .setTitle(':headphones: | Şarkı Kuyruğu')
     .setDescription(`${serverQueue.songs.map(song => `**${++index} -** ${song.title}`).join('\n')}`))
     .addField('Şu anda çalınan: ' + `${serverQueue.songs[0].title}`);
-	} else if (command === 'duraklatmaorposıçocupu') {
-		if (serverQueue && serverQueue.playing) {
-			serverQueue.playing = false;
-			serverQueue.connection.dispatcher.pause();
-			return msg.channel.sendEmbed(new Discord.RichEmbed()
-      .setTitle("**:pause_button: Müzik Senin İçin Durduruldu!**")
-      .setColor('BLACK'));
-		}
-		return msg.channel.send(':warning: | **Çalan Müzik Bulunmamakta**');
-	} else if (command === 'devametmeorppsoskdkd') {
-		if (serverQueue && !serverQueue.playing) {
-			serverQueue.playing = true;
-			serverQueue.connection.dispatcher.resume();
-			return msg.channel.sendEmbed(new Discord.RichEmbed()
-      .setTitle("**:arrow_forward: Müzik Senin İçin Devam Etmekte!**")
-      .setColor('BLACK'));
-		}
-		return msg.channel.sendEmbed(new Discord.RichEmbed()
-    .setTitle(":warning: ** | Çalan Müzik Bulunmamakta.**")
-    .setColor('BLACK'));
+	
 	}
-  
+  if (command === 'search') {
+		const voiceChannel = msg.member.voiceChannel;
+		if (!voiceChannel) return msg.channel.sendEmbed(new Discord.RichEmbed()
+      .setColor('RANDOM')
+    .setDescription(':warning: | İlk olarak sesli bir kanala giriş yapmanız gerek.'));
+		const permissions = voiceChannel.permissionsFor(msg.client.user);
+		if (!permissions.has('CONNECT')) {
+			return msg.channel.sendEmbed(new Discord.RichEmbed()
+    .setColor('RANDOM')
+    .setTitle(':warning: | İlk olarak sesli bir kanala giriş yapmanız gerek.'));
+		}
+		if (!permissions.has('SPEAK')) {
+			 return msg.channel.sendEmbed(new Discord.RichEmbed()
+      .setColor('RANDOM')
+      .setTitle(':warning: | Şarkı başlatılamıyor. Lütfen mikrofonumu açınız.'));
+        }
+
+		if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
+			const playlist = await youtube.getPlaylist(url);
+			const videos = await playlist.getVideos();
+			for (const video of Object.values(videos)) {
+				const video2 = await youtube.getVideoByID(video.id); // eslint-disable-line no-await-in-loop
+				await handleVideo(video2, msg, voiceChannel, true); // eslint-disable-line no-await-in-loop
+			}
+			 return msg.channel.sendEmbed(new Discord.RichEmbed)
+      .setTitle(`**✅ | Oynatma Listesi: **${playlist.title}** Kuyruğa Eklendi!**`)
+		} else {
+			try {
+				var video = await youtube.getVideo(url);
+			} catch (error) {
+				try {
+					var videos = await youtube.searchVideos(searchString, 10);
+					let index = 0;
+          
+				 msg.channel.sendEmbed(new Discord.RichEmbed()                  
+         .setTitle('Kazım/DJ | Şarkı Seçimi')
+         .setDescription(`${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}`)
+         .setFooter('Lütfen 1-10 arasında bir rakam seçiniz 10 saniye içinde liste iptal edilecektir.')
+         .setColor('0x36393E'));
+          msg.delete(5000)
+					try {
+						var response = await msg.channel.awaitMessages(msg2 => msg2.content > 0 && msg2.content < 11, {
+							maxMatches: 1,
+							time: 10000,
+							errors: ['time']
+						});
+					} catch (err) {
+						console.error(err);
+						 return msg.channel.sendEmbed(new Discord.RichEmbed()
+            .setColor('0x36393E')
+            .setDescription(':warning: | **Şarkı Değeri Belirtmediğiniz İçin Seçim İptal Edilmiştir**.'));
+                    }
+					const videoIndex = parseInt(response.first().content);
+					var video = await youtube.getVideoByID(videos[videoIndex - 1].id);
+				} catch (err) {
+					console.error(err);
+					return msg.channel.sendEmbed(new Discord.RichEmbed()
+          .setColor('0x36393E')
+          .setDescription(':( | **Aradaım Fakat Hiç Bir Sonuç Çıkmadı**'));
+                }
+            }
+			return handleVideo(video, msg, voiceChannel);
+      
+		}
 
 	return undefined;
+    }
 });
+
 
 async function handleVideo(video, msg, voiceChannel, playlist = false) {
     const serverQueue = queue.get(msg.guild.id);
