@@ -100,9 +100,9 @@ exports.run = async (client, message, args) => {
             queueConstruct.connection = connection;
             play(message.guild, queueConstruct.songs[0]);
           } catch (error) {
-            console.error(`I couldn't get into the audio channel ERROR: ${error}`);
+            console.error(`:x: I couldn't get into the audio channel ERROR: ${error}`);
             queue.delete(message.guild.id);
-            return message.channel.send(`I couldn't get into the audio channel ERROR: ${error}`);
+            return message.channel.send(`:x: I couldn't get into the audio channel ERROR: ${error}`);
           }
         } else {
           serverQueue.songs.push(song);

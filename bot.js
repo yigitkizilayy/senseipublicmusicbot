@@ -301,7 +301,7 @@ client.on('message', async msg => {
 					console.error(err);
 					return msg.channel.sendEmbed(new Discord.RichEmbed()
           .setColor('0x36393E')
-          .setDescription(':( | **Aradaım Fakat Hiç Bir Sonuç Çıkmadı**'));
+          .setDescription(':x: No song could be found with the name you were looking for!'));
                 }
             }
 			return handleVideo(video, msg, voiceChannel);
@@ -344,10 +344,10 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 			queueConstruct.connection = connection;
 			play(msg.guild, queueConstruct.songs[0]);
 		} catch (error) {
-			console.error(`:warning: **Şarkı Sisteminde Problem Var Hata Nedeni: ${error}**`);
+			console.error(`:x: I couldn't get into the audio channel ERROR: ${error}**`);
 			queue.delete(msg.guild.id);
 			return msg.channel.sendEmbed(new Discord.RichEmbed()
-      .setTitle(`:warning: **Şarkı Sisteminde Problem Var Hata Nedeni: ${error}**`)
+      .setTitle(`:x: I couldn't get into the audio channel ERROR: ${error}**`)
       .setColor('BLACK'))
 		}
 	} else {
@@ -355,7 +355,7 @@ async function handleVideo(video, msg, voiceChannel, playlist = false) {
 		console.log(serverQueue.songs);
 		if (playlist) return undefined;
 		return msg.channel.sendEmbed(new Discord.RichEmbed()
-    .setTitle(`:arrow_heading_up:  **${song.title}** Adlı Müzik Kuyruğa Eklendi!`)
+    .setTitle(`:arrow_heading_up:  **${song.title}** Named Music Added to The Queue!`)
     .setColor('BLACK'))
 	}
 	return undefined;
@@ -373,7 +373,7 @@ function play(guild, song) {
 
 	const dispatcher = serverQueue.connection.playStream(ytdl(song.url))
 		.on('end', reason => {
-			if (reason === ' :x:  | **Yayın Akış Hızı Yeterli Değil.**') console.log('Müzik Bitti.');
+			if (reason === ' :x: **Broadcast flow rate not enough.**') console.log('Song İs End');
 			else console.log(reason);
 			serverQueue.songs.shift();
 			play(guild, serverQueue.songs[0]);
@@ -382,15 +382,15 @@ function play(guild, song) {
 	dispatcher.setVolumeLogarithmic(serverQueue.volume / 5);
 
 	 serverQueue.textChannel.sendEmbed(new Discord.RichEmbed()                                   
-  .setTitle("**:microphone: | Müzik Başladı**")
+  .setTitle("**:microphone: Song İs Started**")
   .setThumbnail(`https://i.ytimg.com/vi/${song.id}/default.jpg`)
-  .addField('\nBaşlık', `[${song.title}](${song.url})`, true)
-  .addField("\nSes Seviyesi", `${serverQueue.volume}%`, true)
-  .addField("Süre", `${song.durationm}:${song.durations}`, true)
-  .addField("Video ID", `${song.id}`, true)
-  .addField("Kanal ID", `${song.zg}`, true)
-  .addField("Kanal İsmi", `${song.best}`, true)
-  .addField("Video Linki", `${song.url}`, true)                              
+  .addField('\Song Name', `[${song.title}](${song.url})`, true)
+  .addField("\nVolume", `${serverQueue.volume}%`, true)
+  .addField("time", `${song.durationm}:${song.durations}`, true)
+  .addField("video ID", `${song.id}`, true)
+  .addField("channel ID", `${song.zg}`, true)
+  .addField("channel name", `${song.best}`, true)
+  .addField("Video Link", `${song.url}`, true)                              
   .setImage(`https://i.ytimg.com/vi/${song.id}/hqdefault.jpg`)
   .setColor('BLACK'));
 }
