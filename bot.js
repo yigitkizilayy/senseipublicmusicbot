@@ -401,4 +401,13 @@ client.on('message', msg => {
     
   }//lan naptın
 });
+client.on('message', msg => {
+  
+  if (msg.content.toLowerCase() === '!invite') {
+    const eris = new Discord.RichEmbed()
+    .setTitle('Links')
+    .setDescription('[Commands](https://discord.gg/JDUPa6s)')
+    msg.channel.send(eris);
+  }//lan naptın
+});
 client.login(ayarlar.token);  
