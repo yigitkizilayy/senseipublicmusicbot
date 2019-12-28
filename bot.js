@@ -209,7 +209,7 @@ client.on('message', async msg => {
 	} else if (command === 'geçmeorospuçocuğu') {
 		if (!msg.member.voiceChannel) if (!msg.member.voiceChannel) return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setColor('BLACK')
-    .setDescription(':x: | **Lütfen öncelikle sesli bir kanala katılınız**.'));
+    .setDescription(':x: **You have to be in a voice channel to use this command.**'));
 		if (!serverQueue) return msg.channel.sendEmbed(new Discord.RichEmbed()
      .setColor('BLACK')
      .setTitle(':x: | **Hiç Bir Müzik Çalmamakta**'));                                              
@@ -388,5 +388,17 @@ client.on("message", message => {
 }
 } 
 });
-
+client.on('message', msg => {
+  if (msg.content.toLowerCase() === '!help') {
+    msg.channel.send(':white_check_mark: **Check https://rythmbot.co/features#list for a list of commands**')
+    }
+});
+client.on('message', msg => {
+  
+  if (msg.content.toLowerCase() === '<@!660484135701315604>') {
+   
+    msg.channel.send('**My prefix here is** `!` ')
+    
+  }//lan naptın
+});
 client.login(ayarlar.token);  
