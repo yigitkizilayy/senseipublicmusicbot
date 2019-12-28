@@ -405,9 +405,19 @@ client.on('message', msg => {
   
   if (msg.content.toLowerCase() === '!invite') {
     const eris = new Discord.RichEmbed()
-    .setTitle('Links')
-    .setDescription('[Commands](https://discord.gg/JDUPa6s)')
+    .setAuthor(client.user.username, client.user.avatarURL)
+    .setDescription('[Commands](https://discord.gg/JDUPa6s)\n[Official Discord](https://discord.gg/JDUPa6s)\n[Add Me](https://discord.gg/JDUPa6s)\n[Donate](https://discord.gg/JDUPa6s)')
     msg.channel.send(eris);
   }//lan naptın
 });
+client.on('guildCreate', guild => {
+
+    let kanal = guild.channels.filter(c => c.type === "text").random()
+const embed = new Discord.RichEmbed()
+.setTitle('Beni sunucunuza eklediğiniz için teşekkürler. Prefixim: w')
+kanal.send(embed)
+    
+
+});
+
 client.login(ayarlar.token);  
