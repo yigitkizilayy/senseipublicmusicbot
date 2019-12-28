@@ -388,3 +388,5 @@ client.on("message", message => {
 }
 } 
 });
+
+client.login(ayarlar.token);  

@@ -15,25 +15,26 @@ exports.run = async (client, message, args) => {
 
     const embed = new RichEmbed()
     .setColor("#0f0f0f")
-    .setDescription("Lütfen Dinlemek istediğin şarkıyı yazın! (Şarkı ismi veya Youtube URLsi)")
+    .setTitle(":x: Missing args")
+    .setDescription("!play [Link or query]")
     if (!args[0]) return message.channel.send(embed);
         
     const voiceChannelAdd = new RichEmbed()
     .setColor("#0f0f0f")
-    .setDescription(`⚠️\`HATA\` Lütfen herhangi bir sesli kanala katılınız.`)
+    .setDescription(`:x: **You have to be in a voice channel to use this command.**`)
     if (!voiceChannel) return message.channel.send(voiceChannelAdd);
 
     var permissions = voiceChannel.permissionsFor(client.user);
     if (!permissions.has('CONNECT')) {
       const warningErr = new RichEmbed()
       .setColor("#0f0f0f")
-      .setDescription(`⚠️\`HATA\` Herhangi bir sesli kanala katılabilmek için yeterli iznim yok.`)
+      .setDescription(`:x: I don't have enough permission to join any voice channel.`)
       return message.channel.send(warningErr);
     }
     if (!permissions.has('SPEAK')) {
       const musicErr = new RichEmbed()
       .setColor("#0f0f0f")
-      .setDescription(`⚠️\`HATA\` Müzik açamıyorum/şarkı çalamıyorum çünkü kanalda konuşma iznim yok veya mikrofonum kapalı.`)
+      .setDescription(`:x: I can't turn on music/i can't play songs because I'm not allowed to talk on the channel or my microphone is off.`)
       return message.channel.send(musicErr);
     }
       if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
@@ -45,7 +46,7 @@ exports.run = async (client, message, args) => {
       }
       const PlayingListAdd = new RichEmbed()
       .setColor("#0f0f0f")
-      .setDescription(`[${playlist.title}](https://www.youtube.com/watch?v=${playlist.id}) adlı şarkı oynatma listesine Eklendi!`)
+      .setDescription(`[${playlist.title}](https://www.youtube.com/watch?v=${playlist.id}) added to the playlist of the song!`)
       return message.channel.send(PlayingListAdd);
     } else {
       try {
