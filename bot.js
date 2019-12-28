@@ -279,8 +279,8 @@ client.on('message', async msg => {
           
 				 msg.channel.sendEmbed(new Discord.RichEmbed()                  
          .setTitle('Kazım/DJ | Şarkı Seçimi')
-         .setDescription(`${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}`)
-         .setFooter('Lütfen 1-10 arasında bir rakam seçiniz 1 dakika içinde liste iptal edilecektir.')
+         .setDescription(`${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n\n\nType a number to make a choice, Type cancel to exit')}`)
+         .setFooter('New Deals Buy&Sell Codeing BY Westlty’s')
          .setColor('0x36393E'));
           msg.delete(5000)
 					try {
@@ -293,7 +293,7 @@ client.on('message', async msg => {
 						console.error(err);
 						 return msg.channel.sendEmbed(new Discord.RichEmbed()
             .setColor('0x36393E')
-            .setDescription(':warning: | **Şarkı Değeri Belirtmediğiniz İçin Seçim İptal Edilmiştir**.'));
+            .setDescription(':x: Timeout!'));
                     }
 					const videoIndex = parseInt(response.first().content);
 					var video = await youtube.getVideoByID(videos[videoIndex - 1].id);

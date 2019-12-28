@@ -148,7 +148,7 @@ exports.run = async (client, message, args) => {
         .addField("Estimated time until playing", `${y}`, true)
         .addField("The User Who Opened the Song", `${song.requester}`, true)
         .setThumbnail(song.thumbnail)
-         .setFooter("Westly's Bot Satış Merkezi", client.user.avatarURL)
+         .setFooter("New Deals Buy&Sell Codeing BY Westlty’s", client.user.avatarURL)
         serverQueue.textChannel.send(playingBed);
       }  
 };
