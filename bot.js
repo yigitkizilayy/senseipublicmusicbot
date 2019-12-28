@@ -257,7 +257,7 @@ client.on('message', async msg => {
 		if (!permissions.has('SPEAK')) {
 			 return msg.channel.sendEmbed(new Discord.RichEmbed()
       .setColor('RANDOM')
-      .setTitle(':warning: | Şarkı başlatılamıyor. Lütfen mikrofonumu açınız.'));
+      .setTitle(":x: I can't turn on music/i can't play songs because I'm not allowed to talk on the channel or my microphone is off."));
         }
 
 		if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
@@ -268,7 +268,7 @@ client.on('message', async msg => {
 				await handleVideo(video2, msg, voiceChannel, true); // eslint-disable-line no-await-in-loop
 			}
 			 return msg.channel.sendEmbed(new Discord.RichEmbed)
-      .setTitle(`**✅ | Oynatma Listesi: **${playlist.title}** Kuyruğa Eklendi!**`)
+      .setTitle(`**Play list: **${playlist.title}** added to the queue*`)
 		} else {
 			try {
 				var video = await youtube.getVideo(url);
@@ -280,13 +280,13 @@ client.on('message', async msg => {
 				 msg.channel.sendEmbed(new Discord.RichEmbed()                  
          .setTitle('Kazım/DJ | Şarkı Seçimi')
          .setDescription(`${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}`)
-         .setFooter('Lütfen 1-10 arasında bir rakam seçiniz 10 saniye içinde liste iptal edilecektir.')
+         .setFooter('Lütfen 1-10 arasında bir rakam seçiniz 1 dakika içinde liste iptal edilecektir.')
          .setColor('0x36393E'));
           msg.delete(5000)
 					try {
 						var response = await msg.channel.awaitMessages(msg2 => msg2.content > 0 && msg2.content < 11, {
 							maxMatches: 1,
-							time: 10000,
+							time: 60000,
 							errors: ['time']
 						});
 					} catch (err) {
