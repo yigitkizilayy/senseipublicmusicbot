@@ -6,7 +6,7 @@ const youtube = new YouTube('AIzaSyDSiyHBWZI9dDZBWXloNVhrHbpzTTfa0L8');
 
 exports.run = async (client, message, args) => {
     const queue = client.queue;
-    
+
     var searchString = args.slice(0).join(' ');
     var url = args[0] ? args[0].replace(/<(.+)>/g, '$1') : '';
     var serverQueue = queue.get(message.guild.id);
@@ -15,32 +15,32 @@ exports.run = async (client, message, args) => {
         
     const a = new RichEmbed()
     .setColor("#0f0f0f")
-    .setDescription(`Bir sesli kanalda değilsin.`)  
+    .setDescription(`:x: **You have to be in a voice channel to use this command.**`)  
   if (!voiceChannel) return message.channel.send(a)
 
-  if (serverQueue && serverQueue.playing) {
-    serverQueue.playing = false;
-    serverQueue.connection.dispatcher.pause();
+    if (serverQueue && !serverQueue.playing) {
+        serverQueue.playing = true;
+        serverQueue.connection.dispatcher.resume();
         const asjdhsaasjdhaadssad = new RichEmbed()
     .setColor("#0f0f0f")
-    .setDescription(`Şarkı başarıyla duraklatıldı!`)
+    .setDescription(`:play_pause: Resuming :thumbsup:`)
       return message.channel.send(asjdhsaasjdhaadssad);
     }
     const b = new RichEmbed()
     .setColor("#0f0f0f")
-    .setDescription(`Şuanda herhangi bir şarkı çalmıyor.`)
+    .setDescription(`:x: There's no song playing right now.`)
     if (!serverQueue) return message.channel.send(b);
 
 };
 
 exports.conf = {
     enabled: true,
-    aliases: ['d'],
+    aliases: ['r'],
     permLevel: 0
 };
 
 exports.help = {
-    name: 'duraklat',
-    description: 'Çalan şarkıyı duraklatır.',
-    usage: 'duraklat'
+    name: 'resum',
+    description: 'Duraklatılmış şarkıyı devam ettirir.',
+    usage: 'devamet'
 };

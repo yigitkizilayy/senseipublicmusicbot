@@ -15,28 +15,28 @@ exports.run = async (client, message, args) => {
         
     const err1 = new RichEmbed()
     .setColor("#0f0f0f")
-    .setDescription(`Bir sesli kanalda değilsin.`)  
+    .setDescription(`:x: **You have to be in a voice channel to use this command.**`)  
     if (!voiceChannel) return message.channel.send(err1);
     const err2 = new RichEmbed()
     .setColor("#0f0f0f")
-    .setDescription(`Şuanda herhangi bir şarkı çalmıyor.`)
+    .setDescription(`:x: There's no song playing right now.`)
     if (!serverQueue) return message.channel.send(err2);
     serverQueue.songs = [];
     const songEnd = new RichEmbed()
     .setColor("#0f0f0f")
-    .setDescription(`Şarkı başarıyla durduruldu ve odadan ayrıldım!`)
+    .setDescription(`:mailbox_with_no_mail: Successfully disconnected`)
     serverQueue.connection.dispatcher.end('');
     message.channel.send(songEnd);
 };
 
 exports.conf = {
     enabled: true,
-    aliases: ['ç'],
+    aliases: ['dc'],
     permLevel: 0
 };
 
 exports.help = {
-    name: 'botçık',
+    name: 'disconnect',
     description: 'Botu Kanaldan Çıkartır ve Şarkıyı Kapatır.',
     usage: 'botçık'
 };

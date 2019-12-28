@@ -23,20 +23,20 @@ exports.run = async (client, message, args) => {
     if (!serverQueue) return message.channel.send(err05);
     const songSkip = new RichEmbed()
     .setColor("#0f0f0f")
-    .setDescription(`Şarkı başarıyla geçildi!`)
+    .setDescription(`The song was successfully skiped!`)
     serverQueue.connection.dispatcher.end('');
     message.channel.send(songSkip)
-if(!message.member.hasPermission("KİCK_MEMBERS")) return message.reply("Bu Komutu Kullanmak İçin İzniniz Yok!");
+if(!message.member.hasPermission("KİCK_MEMBERS")) return message.reply(":x: **This command requires you to either have a role named** `DJ` **or** `Manage Channels` **permission to use it** (being alone with the bot also works)");
 };
 
 exports.conf = {
     enabled: true,
-    aliases: ['g'],
+    aliases: ['s'],
     permLevel: 0
 };
 
 exports.help = {
-    name: 'geç',
+    name: 'skip',
     description: 'Sıradaki şarkıya geçer. Sırada şarkı yoksa şarkıyı kapatır.',
     usage: 'geç'
 };
