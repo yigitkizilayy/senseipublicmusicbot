@@ -143,17 +143,17 @@ client.on('message', async msg => {
 		const voiceChannel = msg.member.voiceChannel;
 		if (!voiceChannel) return msg.channel.sendEmbed(new Discord.RichEmbed()
       .setColor('BLACK')
-    .setDescription(':warning: | İlk olarak sesli bir kanala giriş yapmanız gerek.'));
+    .setDescription(':x: **You have to be in a voice channel to use this command.**'));
 		const permissions = voiceChannel.permissionsFor(msg.client.user);
 		if (!permissions.has('CONNECT')) {
 			return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setColor('BLACK')
-    .setTitle(':warning: | İlk olarak sesli bir kanala giriş yapmanız gerek.'));
+    .setTitle(':x: **You have to be in a voice channel to use this command.**'));
 		}
-		if (!permissions.has('SPEAK ne piç')) {
+		if (!permissions.has('SPEAK')) {
 			 return msg.channel.sendEmbed(new Discord.RichEmbed()
       .setColor('BLACK')
-      .setTitle(':warning: | Şarkı başlatılamıyor. Lütfen mikrofonumu açınız.'));
+      .setTitle(":x: I can't turn on music/i can't play songs because I'm not allowed to talk on the channel or my microphone is off."));
         }
 
 		if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
@@ -164,7 +164,7 @@ client.on('message', async msg => {
 				await handleVideo(video2, msg, voiceChannel, true); // eslint-disable-line no-await-in-loop
 			}
 			 return msg.channel.sendEmbed(new Discord.RichEmbed)
-      .setTitle(`**? | Oynatma Listesi: **${playlist.title}** Kuyruğa Eklendi!**`)
+      .setTitle(`**Play list **${playlist.title}** Added to the queue!**`)
 		} else {
 			try {
 				var video = await youtube.getVideo(url);
@@ -174,11 +174,11 @@ client.on('message', async msg => {
 					let index = 0;
           
 				 msg.channel.sendEmbed(new Discord.RichEmbed()                  
-         .setTitle(':musical_note: | Şarkı Seçimi')
+         .setTitle(':musical_note: Song Selection')
          .setAuthor(`${msg.author.tag}`, msg.author.avatarURL)
          .setThumbnail("https://i.postimg.cc/W1b1LW13/youtube-kids-new-logo.png")
          .setDescription(`${videos.map(video2 => `**${++index} -** ${video2.title}`).join('\n')}`)
-         .setFooter('Lütfen 1-10 arasında bir rakam seçiniz 10 saniye içinde liste iptal edilecektir.')
+         .setFooter('Please select a figure between 1-10 and the list will be cancelled in 10 seconds.')
          .setColor('BLACK'));
           msg.delete(5000)
          
@@ -192,7 +192,7 @@ client.on('message', async msg => {
 						console.error(err);
 						 return msg.channel.sendEmbed(new Discord.RichEmbed()
             .setColor('BLACK')
-            .setDescription(':warning: | **Şarkı Değeri Belirtmediğiniz İçin Seçim İptal Edilmiştir**.'));
+            .setDescription(':x: ***Selection cancelled for not specifying Song Value**.'));
                     }
 					const videoIndex = parseInt(response.first().content);
 					var video = await youtube.getVideoByID(videos[videoIndex - 1].id);
@@ -200,7 +200,7 @@ client.on('message', async msg => {
 					console.error(err);
 					return msg.channel.sendEmbed(new Discord.RichEmbed()
           .setColor('BLACK')
-          .setDescription(':( :headphones: | **Aradım Fakat Hiç Bir Sonuç Çıkmadı**'));
+          .setDescription(':x: **I called but no results**'));
                 }
             }
 			return handleVideo(video, msg, voiceChannel);
