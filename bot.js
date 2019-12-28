@@ -215,12 +215,12 @@ client.on('message', async msg => {
      .setColor('BLACK')
      .setTitle(":x: There's no song playing right now."));                                              
 		if (!args[1]) return msg.channel.sendEmbed(new Discord.RichEmbed()
-   .setTitle(` **${serverQueue.volume}**`)
+   .setTitle(`Current Volume: **${serverQueue.volume}**`)
     .setColor('BLACK'))
 		serverQueue.volume = args[1];
 		serverQueue.connection.dispatcher.setVolumeLogarithmic(args[1] / 5);
 		return msg.channel.sendEmbed(new Discord.RichEmbed()
-    .setTitle(`:hammer:  Ses Seviyesi Ayarlanıyor: **${args[1]}**`)
+    .setTitle(`Setting Volume: **${args[1]}**`)
     .setColor('BLACK'));                             
 	} else if (command === 'now') {
 		if (!serverQueue) return msg.channel.sendEmbed(new Discord.RichEmbed()
@@ -234,25 +234,25 @@ client.on('message', async msg => {
 	} else if (command === '') {
     let index = 0;
 		if (!serverQueue) return msg.channel.sendEmbed(new Discord.RichEmbed()
-    .setTitle(":warning: | **Sırada Müzik Bulunmamakta**")
+    .setTitle(":x: **No Music In Order**")
     .setColor('BLACK'));
 		  return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setColor('RANDOM')
-     .setTitle(':headphones: | Şarkı Kuyruğu')
+     .setTitle('Song queue')
     .setDescription(`${serverQueue.songs.map(song => `**${++index} -** ${song.title}`).join('\n')}`))
-    .addField('Şu anda çalınan: ' + `${serverQueue.songs[0].title}`);
+    .addField('Now playing: ' + `${serverQueue.songs[0].title}`);
 	
 	}
   if (command === 'search') {
 		const voiceChannel = msg.member.voiceChannel;
 		if (!voiceChannel) return msg.channel.sendEmbed(new Discord.RichEmbed()
       .setColor('RANDOM')
-    .setDescription(':warning: | İlk olarak sesli bir kanala giriş yapmanız gerek.'));
+    .setDescription(':x: **You have to be in a voice channel to use this command.**'));
 		const permissions = voiceChannel.permissionsFor(msg.client.user);
 		if (!permissions.has('CONNECT')) {
 			return msg.channel.sendEmbed(new Discord.RichEmbed()
     .setColor('RANDOM')
-    .setTitle(':warning: | İlk olarak sesli bir kanala giriş yapmanız gerek.'));
+    .setTitle(':x: **You have to be in a voice channel to use this command.**'));
 		}
 		if (!permissions.has('SPEAK')) {
 			 return msg.channel.sendEmbed(new Discord.RichEmbed()
