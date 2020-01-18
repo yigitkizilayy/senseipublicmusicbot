@@ -415,7 +415,7 @@ client.on('message', msg => {
     .setAuthor(client.user.username, client.user.avatarURL)
     .setDescription('[Commands]()\n[Official Discord]()\n[Add Me]()\n[Donate]()')
     msg.channel.send(eris);
-  }//lan naptın
+  }
 });
 client.on('guildCreate', guild => {
 
