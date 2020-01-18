@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const { RichEmbed } = require('discord.js');
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
-const youtube = new YouTube('');
+const youtube = new YouTube('AIzaSyCzIA5MMDC9sFJELCkzb-tnf-7n3RI_KEg');
 
 exports.run = async (client, message, args) => {
     const queue = client.queue;
@@ -111,7 +111,7 @@ exports.run = async (client, message, args) => {
       
           const songListBed = new RichEmbed()
           .setColor("RANDOM")
-          .setDescription(`[${song.title}](https://www.youtube.com/watch?v=${song.id}) adlı şarkı kuyruğa eklendi!`)
+          .setDescription(`[${song.title}](https://www.youtube.com/watch?v=${song.id}) added to queue!`)
           return message.channel.send(songListBed);
         }
         return undefined;
@@ -148,7 +148,6 @@ exports.run = async (client, message, args) => {
         .addField("Estimated time until playing", `${y}`, true)
         .addField("The User Who Opened the Song", `${song.requester}`, true)
         .setThumbnail(song.thumbnail)
-         .setFooter("New Deals Buy&Sell Codeing BY Westlty’s", client.user.avatarURL)
         serverQueue.textChannel.send(playingBed);
       }  
 };

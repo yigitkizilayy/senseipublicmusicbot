@@ -125,7 +125,7 @@ client.on('error', e => {
 
 client.login(ayarlar.token);
 
-const youtube = new YouTube('AIzaSyDSiyHBWZI9dDZBWXloNVhrHbpzTTfa0L8');
+const youtube = new YouTube('AIzaSyCzIA5MMDC9sFJELCkzb-tnf-7n3RI_KEg');
 
 client.on('message', async msg => {
 
@@ -395,26 +395,6 @@ function play(guild, song) {
   .setColor('BLACK'));
 }
 
-
-
-
-
-client.on("message", message => {
-   const sie = [":no_entry: Yapımcım Değilsin :no_entry: "] 
-   const tmm = [":arrows_counterclockwise: Bot Yeniden Başlatılıyor...", " :arrows_counterclockwise:  Bot Yeniden Başlatılıyor..."]
-   let ananinsonucu = Math.floor(Math.random() * sie.length); 
-   let babaminsonucu = Math.floor(Math.random() * tmm.length); 
-   if (message.content.toLowerCase() === '?reboot') { 
-   if (message.author.id !== "598227510010052608") {
-        message.channel.sendEmbed(new Discord.RichEmbed().setDescription(sie[ananinsonucu]).setColor('RED'))
-    } else {
-        message.channel.sendEmbed(new Discord.RichEmbed().setDescription(tmm[babaminsonucu]).setColor('GREEN')).then(msg =>  { 
-        console.log(`Yeniden basliyom`); 
-        process.exit(0);
-    })
-}
-} 
-});
 client.on('message', msg => {
   if (msg.content.toLowerCase() === '!help') {
     msg.channel.send(':white_check_mark: **Check https://rythmbot.co/features#list for a list of commands**')
@@ -422,18 +402,18 @@ client.on('message', msg => {
 });
 client.on('message', msg => {
   
-  if (msg.content.toLowerCase() === '<@!660484135701315604>') {
+  if (msg.content.toLowerCase() === `<@!${client.user.id}>`) {
    
     msg.channel.send('**My prefix here is** `!` ')
     
-  }//lan naptın
+  }
 });
 client.on('message', msg => {
   
   if (msg.content.toLowerCase() === '!invite') {
     const eris = new Discord.RichEmbed()
     .setAuthor(client.user.username, client.user.avatarURL)
-    .setDescription('[Commands](https://discord.gg/JDUPa6s)\n[Official Discord](https://discord.gg/JDUPa6s)\n[Add Me](https://discord.gg/JDUPa6s)\n[Donate](https://discord.gg/JDUPa6s)')
+    .setDescription('[Commands]()\n[Official Discord]()\n[Add Me]()\n[Donate]()')
     msg.channel.send(eris);
   }//lan naptın
 });
@@ -441,7 +421,7 @@ client.on('guildCreate', guild => {
 
     let kanal = guild.channels.filter(c => c.type === "text").random()
 const embed = new Discord.RichEmbed()
-.setTitle('Beni sunucunuza eklediğiniz için teşekkürler. Prefixim: w')
+.setTitle('TEXT')
 kanal.send(embed)
     
 
