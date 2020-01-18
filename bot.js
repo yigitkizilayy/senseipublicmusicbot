@@ -231,17 +231,6 @@ client.on('message', async msg => {
     .setTitle(" :headphones: | Now Playing")                            
     .addField('Song Name', `[${serverQueue.songs[0].title}](${serverQueue.songs[0].url})`, true)
     .addField("Estimated time until playing", `${serverQueue.songs[0].durationm}:${serverQueue.songs[0].durations}`, true))
-	} else if (command === '') {
-    let index = 0;
-		if (!serverQueue) return msg.channel.sendEmbed(new Discord.RichEmbed()
-    .setTitle(":x: **No Music In Order**")
-    .setColor('BLACK'));
-		  return msg.channel.sendEmbed(new Discord.RichEmbed()
-    .setColor('RANDOM')
-     .setTitle('Song queue')
-    .setDescription(`${serverQueue.songs.map(song => `**${++index} -** ${song.title}`).join('\n')}`))
-    .addField('Now playing: ' + `${serverQueue.songs[0].title}`);
-	
 	}
 });
 
