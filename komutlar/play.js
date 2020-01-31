@@ -16,7 +16,7 @@ exports.run = async (client, message, args) => {
     const embed = new RichEmbed()
     .setColor("#0f0f0f")
     .setTitle(":x: Missing args")
-    .setDescription("!play [Link or query]")
+    .setDescription("!!play [Link or query]")
     if (!args[0]) return message.channel.send(embed);
         
     const voiceChannelAdd = new RichEmbed()
