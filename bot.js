@@ -329,24 +329,24 @@ function play(guild, song) {
 }
 
 client.on('message', msg => {
-  if (msg.content.toLowerCase() === '!help') {
-    msg.channel.send(':white_check_mark: **Check https://rythmbot.co/features#list for a list of commands**')
+  if (msg.content.toLowerCase() === '!!help') {
+    msg.channel.send(':white_check_mark: **Destek Sunucum : https://discord.gg/sA8uSa9**')
     }
 });
 client.on('message', msg => {
   
-  if (msg.content.toLowerCase() === `<@!${client.user.id}>`) {
+  if (msg.content.toLowerCase() === `<@${client.user.id}>`) {
    
-    msg.channel.send('**My prefix here is** `!` ')
+    msg.channel.send('**My prefix here is** `!!` ')
     
   }
 });
 client.on('message', msg => {
   
-  if (msg.content.toLowerCase() === '!invite') {
+  if (msg.content.toLowerCase() === '!!invite') {
     const eris = new Discord.RichEmbed()
     .setAuthor(client.user.username, client.user.avatarURL)
-    .setDescription('[Commands]()\n[Official Discord]()\n[Add Me]()\n[Donate]()')
+    .setDescription('Sunucumuz : https://discord.gg/sA8uSa9')
     msg.channel.send(eris);
   }
 });
@@ -354,7 +354,7 @@ client.on('guildCreate', guild => {
 
     let kanal = guild.channels.filter(c => c.type === "text").random()
 const embed = new Discord.RichEmbed()
-.setTitle('TEXT')
+.setTitle('Destek Sunucumuz : https://discord.gg/sA8uSa9')
 kanal.send(embed)
     
 
