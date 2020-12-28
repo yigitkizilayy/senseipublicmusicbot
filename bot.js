@@ -139,7 +139,7 @@ client.on('message', async msg => {
 	let command = msg.content.toLowerCase().split(' ')[0];
 	command = command.slice(prefix.length)
 
-	if (command === 'sadecebotunsahibikullanırpiç') {
+	if (command === 'sadecebotunsahibikullanır') {
 		const voiceChannel = msg.member.voiceChannel;
 		if (!voiceChannel) return msg.channel.sendEmbed(new Discord.RichEmbed()
       .setColor('BLACK')
@@ -330,7 +330,7 @@ function play(guild, song) {
 
 client.on('message', msg => {
   if (msg.content.toLowerCase() === '!!help') {
-    msg.channel.send(':white_check_mark: **Destek Sunucum : https://discord.gg/sA8uSa9**')
+    msg.channel.send(':white_check_mark: **Destek Sunucum : https://discord.gg/ehSxD2s4q7**')
     }
 });
 client.on('message', msg => {
@@ -346,7 +346,7 @@ client.on('message', msg => {
   if (msg.content.toLowerCase() === '!!invite') {
     const eris = new Discord.RichEmbed()
     .setAuthor(client.user.username, client.user.avatarURL)
-    .setDescription('Sunucumuz : https://discord.gg/sA8uSa9')
+    .setDescription('Sunucumuz : https://discord.gg/ehSxD2s4q7')
     msg.channel.send(eris);
   }
 });
@@ -354,7 +354,7 @@ client.on('guildCreate', guild => {
 
     let kanal = guild.channels.filter(c => c.type === "text").random()
 const embed = new Discord.RichEmbed()
-.setTitle('Destek Sunucumuz : https://discord.gg/sA8uSa9')
+.setTitle('Destek Sunucumuz : https://discord.gg/ehSxD2s4q7')
 kanal.send(embed)
     
 
