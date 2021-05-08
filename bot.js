@@ -354,8 +354,10 @@ client.on('message', msg => {
   if (msg.content.toLowerCase() === '.yardım') {
     const eris = new Discord.RichEmbed()
      .setAuthor(client.user.username, client.user.avatarURL)
-    .setDescription(`<a:igne:840402400170344528>Sensei Müzik \n \n <a:ok2:840402391915561011> Yardım Komutları \n \n <a:krmzyldz:840402406655393792> **.çal** : <şarkı-adı> Bir Şarkıyı Oynatır. \n \n <a:krmzyldz:840402406655393792> **.geç** : Sıradaki şarkıyı atlar. \n  \n <a:krmzyldz:840402406655393792> **.durdur** : Çalan şarkıyı durdurur. \n \n  <a:krmzyldz:840402406655393792> **.devam** : Duran şarkıyı devam ettirir. \n \n <a:krmzyldz:840402406655393792> **.botbilgi** : Bot bilgisini gösterir. \n \n <a:krmzyldz:840402406655393792> **.ayrıl** : Bot sesten ayrılır. \n \n \n <a:donme:840402403084730379> Sensei günden güne güncelleniyor!.`)
-                       .setColor("ff0a0a")
+    .setDescription(`<a:igne:840402400170344528>Sensei Müzik \n \n <a:ok2:840402391915561011> Yardım Komutları \n \n <a:krmzyldz:840402406655393792> **.çal** : <şarkı-adı> Bir Şarkıyı Oynatır. \n \n <a:krmzyldz:840402406655393792> **.geç** : Sıradaki şarkıyı atlar. \n  \n <a:krmzyldz:840402406655393792> **.durdur** : Çalan şarkıyı durdurur. \n \n  <a:krmzyldz:840402406655393792>**.devam** : Duran şarkıyı devam ettirir. \n \n <a:krmzyldz:840402406655393792> **.botbilgi** : Bot bilgisini gösterir. \n \n <a:krmzyldz:840402406655393792> **.ayrıl** : Bot sesten ayrılır. \n \n \n <a:donme:840402403084730379> Sensei günden güne güncelleniyor!.`)
+    .setImage("https://cdn.discordapp.com/attachments/840407258491650079/840408156772237342/standard_2.gif")     
+    .setThumbnail(msg.author.avatarURL)
+    .setColor("7106aa")
                       
     msg.channel.send(eris);
   }

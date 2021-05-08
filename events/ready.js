@@ -1,7 +1,7 @@
 
 const Moment = require('moment')
 const Discord = require('discord.js')
-let prefix = 'bot prefix'
+let prefix = '.'
 module.exports = client => {
   
   const aktiviteListesi = [
