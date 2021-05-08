@@ -343,7 +343,7 @@ client.on('message', msg => {
 });
 client.on('message', msg => {
   
-  if (msg.content.toLowerCase() === '!!invite') {
+  if (msg.content.toLowerCase() === 'invite') {
     const eris = new Discord.RichEmbed()
     .setAuthor(client.user.username, client.user.avatarURL)
     .setDescription('Sunucumuz : https://discord.gg/ehSxD2s4q7')

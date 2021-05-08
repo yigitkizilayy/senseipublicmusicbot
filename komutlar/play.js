@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const { RichEmbed } = require('discord.js');
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
-const youtube = new YouTube('AIzaSyCzIA5MMDC9sFJELCkzb-tnf-7n3RI_KEg');
+const youtube = new YouTube('AIzaSyBReeHA336dEk_nVViv4VoDwtPyGtPZffU');
 
 exports.run = async (client, message, args) => {
     const queue = client.queue;
@@ -159,7 +159,7 @@ exports.conf = {
 };
 
 exports.help = {
-    name: 'play',
+    name: 'çal',
     description: 'Belirttiğiniz şarkıyı bulunduğunuz sesli kanalda çalar/oynatır.',
-    usage: 'oynat [şarkı adı]'
+    usage: 'çal [şarkı adı]'
 };

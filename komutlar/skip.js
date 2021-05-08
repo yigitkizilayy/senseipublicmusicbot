@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 const { RichEmbed } = require('discord.js');
 const YouTube = require('simple-youtube-api');
 const ytdl = require('ytdl-core');
-const youtube = new YouTube('AIzaSyDSiyHBWZI9dDZBWXloNVhrHbpzTTfa0L8');
+const youtube = new YouTube('AIzaSyBReeHA336dEk_nVViv4VoDwtPyGtPZffU');
 
 exports.run = async (client, message, args) => {
     const queue = client.queue;
@@ -19,7 +19,7 @@ exports.run = async (client, message, args) => {
     if (!voiceChannel) return message.channel.send(err0);
     const err05 = new RichEmbed()
     .setColor("#0f0f0f")
-    .setDescription(`:x: There's no song playing right now.`)
+    .setDescription(`<a:alarm:840402399398723594> Şu an şarkı çalmıyor.`)
     if (!serverQueue) return message.channel.send(err05);
     const songSkip = new RichEmbed()
     .setColor("#0f0f0f")

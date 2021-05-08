@@ -24,14 +24,11 @@ dependencies:
   ms: 2.1.2
   mysql: 2.18.1
   node-google-translate-skidz: 1.1.2
-  node-opus: 0.3.3
   node-superfetch: 0.1.10
-  opusscript: 0.0.7
   os: 0.1.1
   quick.db: 6.3.2
   random-puppy: 1.1.0
   request: 2.88.0
-  simple-youtube-api: 5.2.1
   snekfetch: 4.0.4
   speedtest-net: 1.6.0
   steam-provider: 0.2.0
@@ -41,7 +38,6 @@ dependencies:
   useful-tools: 0.2.6
   weather-js: 2.0.0
   ytdl: 1.4.1
-  ytdl-core: 4.4.2
 packages:
   /@babel/runtime/7.8.3:
     dependencies:
@@ -749,10 +745,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-t/OYhhJ2SD+YGBQcjY8GzzDHEk9f3nerxjtfa6tlMXfe7frs/WozhvCNoGvpM0P3bNf3Gq5ZRMlGr5f3r4/N8A==
-  /bindings/1.2.1:
-    dev: false
-    resolution:
-      integrity: sha1-FK1hE4EtLTfXLme0ystLtyZQXxE=
   /bindings/1.3.1:
     dev: false
     resolution:
@@ -2423,10 +2415,6 @@ packages:
     dev: false
     resolution:
       integrity: sha1-o32U7ZzaLVmGXJ92/llu4fM4dB4=
-  /iso8601-duration/1.3.0:
-    dev: false
-    resolution:
-      integrity: sha512-K4CiUBzo3YeWk76FuET/dQPH03WE04R94feo5TSKQCXpoXQt9E4yx2CnY737QZnSAI3PI4WlKo/zfqizGx52QQ==
   /isstream/0.1.2:
     dev: false
     resolution:
@@ -2984,12 +2972,6 @@ packages:
       node: 4.x || >=6.0.0
     resolution:
       integrity: sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
-  /node-fetch/2.6.1:
-    dev: false
-    engines:
-      node: 4.x || >=6.0.0
-    resolution:
-      integrity: sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
   /node-getopt/0.3.2:
     dev: false
     engines:
@@ -3004,31 +2986,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-ptzaTx/eB4unclyKBy9ixPrUkhgkMwHm/BxqdKoainssqNPIKzAJZo073oV7QPa0rBal+pzXBPvC0K6zYr8vHg==
-  /node-opus/0.3.3:
-    cpu:
-      - x64
-      - arm
-      - arm64
-      - ia32
-    dependencies:
-      bindings: 1.2.1
-      commander: 2.20.3
-      nan: 2.14.2
-    deprecated: This project is unmaintained. See @discordjs/opus for an alternative.
-    dev: false
-    engines:
-      node: '>=5.10.0'
-    optionalDependencies:
-      ogg-packet: 1.0.1
-    os:
-      - linux
-      - darwin
-      - win32
-      - freebsd
-      - android
-    requiresBuild: true
-    resolution:
-      integrity: sha512-ZQniA8iJ6y/qOTmW6eyzM9m8odt4CIGV0NM9/U03/pYLhGyxy18QXO25WfrWd8XsUYx57tnxll2xxj54CN08uQ==
   /node-pre-gyp/0.11.0:
     dependencies:
       detect-libc: 1.0.3
@@ -3251,13 +3208,6 @@ packages:
     dev: false
     resolution:
       integrity: sha1-8MaapQ78lbhmwYb0AKM3acsvEpE=
-  /ogg-packet/1.0.1:
-    dependencies:
-      ref-struct: 1.1.0
-    dev: false
-    optional: true
-    resolution:
-      integrity: sha512-dW1ok3BMnMikyXGDIgVEckWnlViW8JLWQV4qj9aN/rNRVqHlDYSlcIEtSIMH7tpuUOiIxAhY3+OxNdIOm6s17A==
   /omggif/1.0.10:
     dev: false
     resolution:
@@ -3289,10 +3239,6 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-pVOEP16TrAO2/fjej1IdOyupJY8KDUM1CvsaScRbw6oddvpQoOfGk4ywha0HKKVAD6RkW4x6Q+tNBwhf3Bgpuw==
-  /opusscript/0.0.7:
-    dev: false
-    resolution:
-      integrity: sha512-DcBadTdYTUuH9zQtepsLjQn4Ll6rs3dmeFvN+SD0ThPnxRBRm/WC1zXWPg+wgAJimB784gdZvUMA57gDP7FdVg==
   /os-homedir/1.0.2:
     dev: false
     engines:
@@ -3688,24 +3634,6 @@ packages:
     dev: false
     resolution:
       integrity: sha1-p66PDW+tJL3q/+KBWNbNHxydMLg=
-  /ref-struct/1.1.0:
-    dependencies:
-      debug: 2.6.9
-      ref: 1.3.5
-    dev: false
-    optional: true
-    resolution:
-      integrity: sha1-XV7mWtQc78Olxf60BYcmHkee3BM=
-  /ref/1.3.5:
-    dependencies:
-      bindings: 1.5.0
-      debug: 2.6.9
-      nan: 2.14.2
-    dev: false
-    optional: true
-    requiresBuild: true
-    resolution:
-      integrity: sha512-2cBCniTtxcGUjDpvFfVpw323a83/0RLSGJJY5l5lcomZWhYpU2cuLdsvYqMixvsdLJ9+sTdzEkju8J8ZHDM2nA==
   /regenerator-runtime/0.13.3:
     dev: false
     resolution:
@@ -3997,13 +3925,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-bCR6cP+aTdScaQCnQKbPKtJOKDp/hj9EDLJo3Nw4y1QksqaovlW/bnptB6/c1e+qmNIDHRK+oXFDdEqBT8WzUA==
-  /simple-youtube-api/5.2.1:
-    dependencies:
-      iso8601-duration: 1.3.0
-      node-fetch: 2.6.1
-    dev: false
-    resolution:
-      integrity: sha512-vmndP9Bkh35tifn2OwY+th2imSsfYtmDqczgdOW5yEARFzvSoR8VSQFsivJnctfV5QHQUL6VrOpNdbmDRLh9Bg==
   /sliced/1.0.1:
     dev: false
     resolution:
@@ -4767,14 +4688,11 @@ specifiers:
   ms: ^2.1.2
   mysql: ^2.18.1
   node-google-translate-skidz: ^1.1.2
-  node-opus: ^0.3.3
   node-superfetch: ^0.1.10
-  opusscript: ^0.0.7
   os: ^0.1.1
   quick.db: ^6.3.2
   random-puppy: ^1.1.0
   request: ^2.88.0
-  simple-youtube-api: ^5.2.1
   snekfetch: ^4.0.4
   speedtest-net: ^1.6.0
   steam-provider: ^0.2.0
@@ -4784,4 +4702,3 @@ specifiers:
   useful-tools: ^0.2.6
   weather-js: ^2.0.0
   ytdl: ^1.4.1
-  ytdl-core: ^4.4.2

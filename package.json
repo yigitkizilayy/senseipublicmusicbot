@@ -35,14 +35,11 @@
     "ms": "^2.1.2",
     "mysql": "^2.18.1",
     "node-google-translate-skidz": "^1.1.2",
-    "node-opus": "^0.3.3",
     "node-superfetch": "^0.1.10",
-    "opusscript": "^0.0.7",
     "os": "^0.1.1",
     "quick.db": "^6.3.2",
     "random-puppy": "^1.1.0",
     "request": "^2.88.0",
-    "simple-youtube-api": "^5.2.1",
     "snekfetch": "^4.0.4",
     "speedtest-net": "^1.6.0",
     "steam-provider": "^0.2.0",
@@ -51,8 +48,7 @@
     "tcmb-doviz-kuru": "^2.0.4",
     "useful-tools": "^0.2.6",
     "weather-js": "^2.0.0",
-    "ytdl": "^1.4.1",
-    "ytdl-core": "^4.4.2"
+    "ytdl": "^1.4.1"
   },
   "engines": {
     "node": "8.x"
