@@ -1,14 +1,19 @@
-const chalk = require('chalk');
-const moment = require('moment');
-const Discord = require('discord.js');
-const ayarlar = require('../ayarlar.json');
 
-var prefix = ayarlar.prefix;
-
-
+const Moment = require('moment')
+const Discord = require('discord.js')
+let prefix = 'bot prefix'
 module.exports = client => {
-  client.on("ready", () => {
-  console.log('Sensei Müzik Bot Giriş Yaptı!')
-  client.user.setActivity(".yardım")
-})
-};
+  
+  const aktiviteListesi = [
+    `.yardım`
+  ]
+
+  client.user.setStatus('idle')
+  
+  setInterval(() => {
+    const Aktivite = Math.floor(Math.random() * (aktiviteListesi.length - 1))
+    client.user.setActivity(aktiviteListesi[Aktivite])
+  }, 5000)
+}
+
+

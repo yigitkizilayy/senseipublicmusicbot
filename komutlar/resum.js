@@ -14,7 +14,7 @@ exports.run = async (client, message, args) => {
     var voiceChannel = message.member.voiceChannel;
         
     const a = new RichEmbed()
-    .setColor("#0f0f0f")
+    .setColor("#7106aa")
     .setDescription(`<a:sarialarm:840402393594462248> **Bu komutu kullanabilmek için bir ses kanalında olmalısın!**`)  
   if (!voiceChannel) return message.channel.send(a)
 
@@ -22,12 +22,12 @@ exports.run = async (client, message, args) => {
         serverQueue.playing = true;
         serverQueue.connection.dispatcher.resume();
         const asjdhsaasjdhaadssad = new RichEmbed()
-    .setColor("#0f0f0f")
+    .setColor("#7106aa")
     .setDescription(`:play_pause: Devam ettiriliyor :thumbsup:`)
       return message.channel.send(asjdhsaasjdhaadssad);
     }
     const b = new RichEmbed()
-    .setColor("#0f0f0f")
+    .setColor("#7106aa")
     .setDescription(`<a:sarialarm:840402393594462248> Şu an bir şarkı oynamıyor.`)
     if (!serverQueue) return message.channel.send(b);
 

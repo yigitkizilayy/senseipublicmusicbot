@@ -14,16 +14,16 @@ exports.run = async (client, message, args) => {
     var voiceChannel = message.member.voiceChannel;
         
     const err1 = new RichEmbed()
-    .setColor("#0f0f0f")
+    .setColor("#7106aa")
     .setDescription(`<a:sarialarm:840402393594462248> **Bu komutu kullanmak için bir ses kanalında olmalısın.**`)  
     if (!voiceChannel) return message.channel.send(err1);
     const err2 = new RichEmbed()
-    .setColor("#0f0f0f")
+    .setColor("#7106aa")
     .setDescription(`:x: There's no song playing right now.`)
     if (!serverQueue) return message.channel.send(err2);
     serverQueue.songs = [];
     const songEnd = new RichEmbed()
-    .setColor("#0f0f0f")
+    .setColor("#7106aa")
     .setDescription(`<a:sarialarm:840402393594462248> Ses odasından ayrıldım.`)
     serverQueue.connection.dispatcher.end('');
     message.channel.send(songEnd);
