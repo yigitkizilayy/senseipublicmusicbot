@@ -143,7 +143,7 @@ client.on('message', async msg => {
 		const voiceChannel = msg.member.voiceChannel;
 		if (!voiceChannel) return msg.channel.sendEmbed(new Discord.RichEmbed()
       .setColor('BLACK')
-    .setDescription(':x: **You have to be in a voice channel to use this command.**'));
+    .setDescription(' **Bu komutu kullanabilmek için bir ses kanalında olmalısın.**'));
 		const permissions = voiceChannel.permissionsFor(msg.client.user);
 		if (!permissions.has('CONNECT')) {
 			return msg.channel.sendEmbed(new Discord.RichEmbed()
@@ -328,36 +328,23 @@ function play(guild, song) {
   .setColor('BLACK'));
 }
 
-client.on('message', msg => {
-  if (msg.content.toLowerCase() === '!!help') {
-    msg.channel.send(':white_check_mark: **Destek Sunucum : https://discord.gg/ehSxD2s4q7**')
-    }
-});
+
 client.on('message', msg => {
   
   if (msg.content.toLowerCase() === `<@${client.user.id}>`) {
    
-    msg.channel.send('**My prefix here is** `!!` ')
+    msg.channel.send('**Prefixim** `.` ')
     
   }
 });
 client.on('message', msg => {
   
-  if (msg.content.toLowerCase() === 'invite') {
+  if (msg.content.toLowerCase() === 'ellemesakınx<adokosdfasf') {
     const eris = new Discord.RichEmbed()
     .setAuthor(client.user.username, client.user.avatarURL)
     .setDescription('Sunucumuz : https://discord.gg/ehSxD2s4q7')
     msg.channel.send(eris);
   }
-});
-client.on('guildCreate', guild => {
-
-    let kanal = guild.channels.filter(c => c.type === "text").random()
-const embed = new Discord.RichEmbed()
-.setTitle('Destek Sunucumuz : https://discord.gg/ehSxD2s4q7')
-kanal.send(embed)
-    
-
 });
 
 client.login(process.env.token);  

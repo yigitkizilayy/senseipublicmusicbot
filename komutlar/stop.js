@@ -15,7 +15,7 @@ exports.run = async (client, message, args) => {
         
     const a = new RichEmbed()
     .setColor("#0f0f0f")
-    .setDescription(`:x: **You have to be in a voice channel to use this command.**`)  
+    .setDescription(`<a:sarialarm:840402393594462248> Bu komutu kullanabilmek için bir ses kanalında olmalısın!**`)  
   if (!voiceChannel) return message.channel.send(a)
 
   if (serverQueue && serverQueue.playing) {
@@ -28,7 +28,7 @@ exports.run = async (client, message, args) => {
     }
     const b = new RichEmbed()
     .setColor("#0f0f0f")
-    .setDescription(`:x: There's no song playing right now.`)
+    .setDescription(`<a:sarialarm:840402393594462248> Şu an bir şarkı çalmıyor.`)
     if (!serverQueue) return message.channel.send(b);
 
 };
@@ -40,7 +40,7 @@ exports.conf = {
 };
 
 exports.help = {
-    name: 'stop',
+    name: 'durdur',
     description: 'Çalan şarkıyı duraklatır.',
-    usage: 'duraklat'
+    usage: 'durdur'
 };

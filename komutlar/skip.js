@@ -15,7 +15,7 @@ exports.run = async (client, message, args) => {
         
     const err0 = new RichEmbed()
       .setColor("#0f0f0f")
-      .setDescription(`<a:sarialarm:840402393594462248> **You have to be in a voice channel to use this command.**`) 
+      .setDescription(`<a:sarialarm:840402393594462248> **Bu komutu kullanabilmek için bir ses kanalında olmalısın!**`) 
     if (!voiceChannel) return message.channel.send(err0);
     const err05 = new RichEmbed()
     .setColor("#0f0f0f")
@@ -26,7 +26,7 @@ exports.run = async (client, message, args) => {
     .setDescription(`The song was successfully skiped!`)
     serverQueue.connection.dispatcher.end('');
     message.channel.send(songSkip)
-if(!message.member.hasPermission("KİCK_MEMBERS")) return message.reply(":x: **This command requires you to either have a role named** `DJ` **or** `Manage Channels` **permission to use it** (being alone with the bot also works)");
+if(!message.member.hasPermission("KİCK_MEMBERS")) return message.reply("  **Bu komut DJ rolü yada Mesajları Yönet yetkisine sahip olanlar tarafından kullanılabilir" );
 };
 
 exports.conf = {
@@ -36,7 +36,7 @@ exports.conf = {
 };
 
 exports.help = {
-    name: 'skip',
+    name: 'geç',
     description: 'Sıradaki şarkıya geçer. Sırada şarkı yoksa şarkıyı kapatır.',
     usage: 'geç'
 };
