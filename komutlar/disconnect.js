@@ -15,7 +15,7 @@ exports.run = async (client, message, args) => {
         
     const err1 = new RichEmbed()
     .setColor("#0f0f0f")
-    .setDescription(`:x: **You have to be in a voice channel to use this command.**`)  
+    .setDescription(`<a:sarialarm:840402393594462248> **Bu komutu kullanmak için bir ses kanalında olmalısın.**`)  
     if (!voiceChannel) return message.channel.send(err1);
     const err2 = new RichEmbed()
     .setColor("#0f0f0f")
@@ -24,7 +24,7 @@ exports.run = async (client, message, args) => {
     serverQueue.songs = [];
     const songEnd = new RichEmbed()
     .setColor("#0f0f0f")
-    .setDescription(`:mailbox_with_no_mail: Successfully disconnected`)
+    .setDescription(`<a:sarialarm:840402393594462248> Ses odasından ayrıldım.`)
     serverQueue.connection.dispatcher.end('');
     message.channel.send(songEnd);
 };
@@ -36,7 +36,7 @@ exports.conf = {
 };
 
 exports.help = {
-    name: 'disconnect',
+    name: 'ayrıl',
     description: 'Botu Kanaldan Çıkartır ve Şarkıyı Kapatır.',
-    usage: 'botçık'
+    usage: 'ayrıl'
 };

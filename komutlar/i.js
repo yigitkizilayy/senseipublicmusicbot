@@ -41,7 +41,7 @@ exports.conf = {
 };
 
 exports.help = {
-  name: "info",
+  name: "botbilgi",
   description: "Botun istatistik gösterir.",
-  usage: "boti"
+  usage: "botbilgi"
 };

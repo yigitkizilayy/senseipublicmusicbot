@@ -15,7 +15,7 @@ exports.run = async (client, message, args) => {
         
     const a = new RichEmbed()
     .setColor("#0f0f0f")
-    .setDescription(`:x: **You have to be in a voice channel to use this command.**`)  
+    .setDescription(`<a:sarialarm:840402393594462248> **Bu komutu kullanabilmek için bir ses kanalında olmalısın!**`)  
   if (!voiceChannel) return message.channel.send(a)
 
     if (serverQueue && !serverQueue.playing) {
@@ -23,12 +23,12 @@ exports.run = async (client, message, args) => {
         serverQueue.connection.dispatcher.resume();
         const asjdhsaasjdhaadssad = new RichEmbed()
     .setColor("#0f0f0f")
-    .setDescription(`:play_pause: Resuming :thumbsup:`)
+    .setDescription(`:play_pause: Devam ettiriliyor :thumbsup:`)
       return message.channel.send(asjdhsaasjdhaadssad);
     }
     const b = new RichEmbed()
     .setColor("#0f0f0f")
-    .setDescription(`:x: There's no song playing right now.`)
+    .setDescription(`<a:sarialarm:840402393594462248> Şu an bir şarkı oynamıyor.`)
     if (!serverQueue) return message.channel.send(b);
 
 };
@@ -40,7 +40,7 @@ exports.conf = {
 };
 
 exports.help = {
-    name: 'resum',
+    name: 'devam',
     description: 'Duraklatılmış şarkıyı devam ettirir.',
-    usage: 'devamet'
+    usage: 'devam'
 };

@@ -14,27 +14,27 @@ exports.run = async (client, message, args) => {
     var voiceChannel = message.member.voiceChannel;
 
     const embed = new RichEmbed()
-    .setColor("#0f0f0f")
-    .setTitle(":x: Missing args")
-    .setDescription("!!play [Link or query]")
+    .setColor("#7106aa")
+    .setTitle("Yanlış Kullanım")
+    .setDescription(".çal <şarkı adı veya linki>")
     if (!args[0]) return message.channel.send(embed);
         
     const voiceChannelAdd = new RichEmbed()
-    .setColor("#0f0f0f")
-    .setDescription(`:x: **You have to be in a voice channel to use this command.**`)
+    .setColor("#7106aa")
+    .setDescription(`<a:sarialarm:840402393594462248> **Bir ses odasında bulunmalısın.**`)
     if (!voiceChannel) return message.channel.send(voiceChannelAdd);
 
     var permissions = voiceChannel.permissionsFor(client.user);
     if (!permissions.has('CONNECT')) {
       const warningErr = new RichEmbed()
-      .setColor("#0f0f0f")
-      .setDescription(`:x: I don't have enough permission to join any voice channel.`)
+      .setColor("#7106aa")
+      .setDescription(`<a:sarialarm:840402393594462248> **Ses odasına katılmaya yetkim yok.**`)
       return message.channel.send(warningErr);
     }
     if (!permissions.has('SPEAK')) {
       const musicErr = new RichEmbed()
-      .setColor("#0f0f0f")
-      .setDescription(`:x: I can't turn on music/i can't play songs because I'm not allowed to talk on the channel or my microphone is off.`)
+      .setColor("#7106aa")
+      .setDescription(`<a:sarialarm:840402393594462248> Mikrofonum kapalı olduğu için şarkıyı oynatamıyorum.`)
       return message.channel.send(musicErr);
     }
       if (url.match(/^https?:\/\/(www.youtube.com|youtube.com)\/playlist(.*)$/)) {
@@ -45,8 +45,8 @@ exports.run = async (client, message, args) => {
         await handleVideo(video2, message.message, voiceChannel, true);
       }
       const PlayingListAdd = new RichEmbed()
-      .setColor("#0f0f0f")
-      .setDescription(`[${playlist.title}](https://www.youtube.com/watch?v=${playlist.id}) added to the playlist of the song!`)
+      .setColor("#7106aa")
+      .setDescription(`[${playlist.title}](https://www.youtube.com/watch?v=${playlist.id}) sıraya eklendi!`)
       return message.channel.send(PlayingListAdd);
     } else {
       try {
@@ -61,8 +61,8 @@ exports.run = async (client, message, args) => {
         } catch (err) {
           console.error(err);
           const songNope = new RichEmbed()
-          .setColor("#0f0f0f")
-          .setDescription(`:x: No song could be found with the name you were looking for!`) 
+          .setColor("#7106aa")
+          .setDescription(`<a:sarialarm:840402393594462248> Öyle bir şarkı bulamadım!`) 
           return message.channel.send(songNope);
         }
       }
@@ -100,9 +100,9 @@ exports.run = async (client, message, args) => {
             queueConstruct.connection = connection;
             play(message.guild, queueConstruct.songs[0]);
           } catch (error) {
-            console.error(`<a:sarialarm:840402393594462248> I couldn't get into the audio channel ERROR: ${error}`);
+            console.error(`<a:sarialarm:840402393594462248> Ses kanalına giremedim.`);
             queue.delete(message.guild.id);
-            return message.channel.send(`<a:sarialarm:840402393594462248> I couldn't get into the audio channel ERROR: ${error}`);
+            return message.channel.send(`<a:sarialarm:840402393594462248> Ses kanalına giremedim.`);
           }
         } else {
           serverQueue.songs.push(song);
@@ -110,7 +110,7 @@ exports.run = async (client, message, args) => {
           if (playlist) return undefined;
       
           const songListBed = new RichEmbed()
-          .setColor("RANDOM")
+          .setColor("7106aa")
           .setDescription(`[${song.title}](https://www.youtube.com/watch?v=${song.id}) added to queue!`)
           return message.channel.send(songListBed);
         }
@@ -142,7 +142,7 @@ exports.run = async (client, message, args) => {
         }
 
         const playingBed = new RichEmbed()
-        .setColor("#0f0f0f")
+        .setColor("#7106aa")
         .setAuthor(`Şimdi Çalıyor`, message.author.avatarURL)
         .setDescription(`[${song.title}](${song.url})`)
         .addField("Şarkı Süresi:", `${y}`, true)
