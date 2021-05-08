@@ -9,9 +9,9 @@ exports.run = async (client, message, args) => {
     
     var searchString = args.slice(0).join(' ');
     var url = args[0] ? args[0].replace(/<(.+)>/g, '$1') : '';
-    var serverQueue = queue.get(message.guild.id);//böyle amk
+    var serverQueue = queue.get(message.guild.id);
 
-    var voiceChannel = message.member.voiceChannel;//tüm thisleri message yap 
+    var voiceChannel = message.member.voiceChannel;
 
     const embed = new RichEmbed()
     .setColor("#0f0f0f")
@@ -100,9 +100,9 @@ exports.run = async (client, message, args) => {
             queueConstruct.connection = connection;
             play(message.guild, queueConstruct.songs[0]);
           } catch (error) {
-            console.error(`:x: I couldn't get into the audio channel ERROR: ${error}`);
+            console.error(`<a:sarialarm:840402393594462248> I couldn't get into the audio channel ERROR: ${error}`);
             queue.delete(message.guild.id);
-            return message.channel.send(`:x: I couldn't get into the audio channel ERROR: ${error}`);
+            return message.channel.send(`<a:sarialarm:840402393594462248> I couldn't get into the audio channel ERROR: ${error}`);
           }
         } else {
           serverQueue.songs.push(song);
@@ -143,10 +143,10 @@ exports.run = async (client, message, args) => {
 
         const playingBed = new RichEmbed()
         .setColor("#0f0f0f")
-        .setAuthor(`Now Playing`, song.thumbnail)
+        .setAuthor(`Şimdi Çalıyor`, message.author.avatarURL)
         .setDescription(`[${song.title}](${song.url})`)
-        .addField("Estimated time until playing", `${y}`, true)
-        .addField("The User Who Opened the Song", `${song.requester}`, true)
+        .addField("Şarkı Süresi:", `${y}`, true)
+        .addField("Şarkıyı Kim Açtı:", `${song.requester}`, true)
         .setThumbnail(song.thumbnail)
         serverQueue.textChannel.send(playingBed);
       }  
