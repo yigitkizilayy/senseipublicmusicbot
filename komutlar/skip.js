@@ -23,7 +23,8 @@ exports.run = async (client, message, args) => {
     if (!serverQueue) return message.channel.send(err05);
     const songSkip = new RichEmbed()
     .setColor("#7106aa")
-    .setDescription(`The song was successfully skiped!`)
+    
+    .setDescription(`Şarkı başarıyla geçildi!`)
     serverQueue.connection.dispatcher.end('');
     message.channel.send(songSkip)
 if(!message.member.hasPermission("KİCK_MEMBERS")) return message.reply("  **Bu komut DJ rolü yada Mesajları Yönet yetkisine sahip olanlar tarafından kullanılabilir" );

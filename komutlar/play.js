@@ -109,9 +109,19 @@ exports.run = async (client, message, args) => {
           
           if (playlist) return undefined;
       
+          let y = ''
+        if (song.durationh === 0) {
+            y = `${song.durationm || 0}:${song.durations || 0}`
+        } else {
+            y = `${song.durationh || 0}:${song.durationm || 0}:${song.durations || 0}`
+        }
+          
           const songListBed = new RichEmbed()
           .setColor("7106aa")
-          .setDescription(`[${song.title}](https://www.youtube.com/watch?v=${song.id}) added to queue!`)
+          .setDescription(`[${song.title}](https://www.youtube.com/watch?v=${song.id}) sıraya eklendi`)
+          .addField("Şarkı Süresi:", `${y}`, true)
+          .addField("Şarkıyı Kim İstedi:", `${song.requester}`, true)
+          .setThumbnail(song.thumbnail)
           return message.channel.send(songListBed);
         }
         return undefined;

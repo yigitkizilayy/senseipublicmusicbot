@@ -125,7 +125,7 @@ client.on('error', e => {
 
 client.login(process.env.token);
 
-const youtube = new YouTube('AIzaSyCzIA5MMDC9sFJELCkzb-tnf-7n3RI_KEg');
+const youtube = new YouTube('AIzaSyBReeHA336dEk_nVViv4VoDwtPyGtPZffU');
 
 client.on('message', async msg => {
 
@@ -348,3 +348,8 @@ client.on('message', msg => {
 });
 
 client.login(process.env.token);  
+
+client.on('message', msg => {
+  
+  if (msg.content.toLowerCase() === 'ellemesakınx<adokosdfasf') {
+    const eris = new Discord.RichEmbed()
